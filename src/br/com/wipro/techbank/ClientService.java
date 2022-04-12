@@ -17,4 +17,10 @@ public class ClientService {
         Client client = clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
         System.out.println(client);
     }
+
+    public void deleteById(Long id) {
+        int index = (int) (id - 1);
+        clients.remove(index);
+        clients.forEach(item -> System.out.println(item));
+    }
 }
