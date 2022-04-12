@@ -20,7 +20,17 @@ public class ClientService {
 
     public void deleteById(Long id) {
         int index = (int) (id - 1);
-        clients.remove(index);
+        Client client = clients.remove(index);
+
+        if(client != null) {
+            System.out.printf("Cliente com ID %d foi removido com sucesso!\n", id);
+        } else {
+            System.out.printf("Erro ao tentar remover o cliente com ID %d.\n", id);
+        }
+
+    }
+
+    public void findAll() {
         clients.forEach(item -> System.out.println(item));
     }
 }

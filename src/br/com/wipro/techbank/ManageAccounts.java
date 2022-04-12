@@ -33,6 +33,7 @@ public class ManageAccounts {
 
                     // Mostrar todos
                     case 3:
+                        findAll();
                         break;
 
                         // Mostrar por ID
@@ -55,6 +56,11 @@ public class ManageAccounts {
 
 
         scan.close();
+    }
+
+
+    private static void findAll() {
+        clinetService.findAll();
     }
 
     private static void deleteClient(Scanner scanner) {
