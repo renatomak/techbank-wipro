@@ -1,15 +1,13 @@
 package br.com.wipro.techbank;
 
-import java.math.BigDecimal;
-
 public abstract class Account {
 
     private Long number;
-    private BigDecimal balance;
+    private Double balance;
     private Client client;
     private String creditCard;
 
-    public Account(Long number, BigDecimal balance, Client client, String creditCard) {
+    public Account(Long number, Double balance, Client client, String creditCard) {
         this.number = number;
         this.balance = balance;
         this.client = client;
@@ -20,7 +18,7 @@ public abstract class Account {
         return number;
     }
 
-    public BigDecimal getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
@@ -32,11 +30,11 @@ public abstract class Account {
         return creditCard;
     }
 
-    public void deposit(BigDecimal value){
-        this.balance = this.balance.add(value);
+    public void deposit(Double value){
+        this.balance += value;
     }
 
-    public abstract void withDraw(BigDecimal value);
+    public abstract void withDraw(Double value);
 
-    public abstract void transfer(BigDecimal value);
+    public abstract void transfer(Double value);
 }
