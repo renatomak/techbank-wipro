@@ -9,13 +9,26 @@ public class ClientService {
     protected List<Client> clients = new ArrayList<>();
 
     public void save(Client client) {
-        client.setId((long) clients.size()+1);
+        Long index = clients.size() + 1L;
+        client.setId(index);
         clients.add(client);
+
+        if(index == clients.size()) {
+            System.out.println("Cliente adicionado com sucesso.\n");
+        } else {
+            System.out.println("Cliente não foi adicionado.\n");
+        }
     }
 
     public Client findById(Long id) {
+        if (id >= clients.size()){
+            System.out.printf("Cliente com ID %d não foi encontrado. \n", id);
+            return null;
+        }
+
         Client client = clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
         System.out.println(client);
+        System.out.println("\n\n\n\n");
         return client;
     }
 
@@ -35,16 +48,20 @@ public class ClientService {
 
     public void findAll() {
         clients.forEach(item -> System.out.println(item));
+        System.out.println("\n\n\n\n");
     }
 
-    public void update(Client client) {
+    public Client update(Client client) {
         int index = clients.indexOf(client);
 
         if(index == -1) {
             System.out.printf("Cliente com ID %d não existe.\n", index);
-        } else {
-            clients.remove(index);
-            clients.add(client);
+            return  null;
         }
+
+        clients.remove(index);
+        clients.add(client);
+
+        return  client;
     }
 }

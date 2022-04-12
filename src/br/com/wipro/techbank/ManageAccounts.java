@@ -16,37 +16,41 @@ public class ManageAccounts {
             clearBuffer(scan);
 
             if(choice == 1 ) {
-                System.out.println(Uteis.subMenu);
-                choice = scan.nextByte();
-                clearBuffer(scan);
+                Byte choiceClient = 0;
 
-                switch (choice) {
-                    // Adicionar
-                    case 1:
-                        saveClient(scan);
-                        break;
+                do {
+                    System.out.println(Uteis.subMenu);
+                    choiceClient = scan.nextByte();
+                    clearBuffer(scan);
+                    switch (choiceClient) {
+                        // Adicionar
+                        case 1:
+                            saveClient(scan);
+                            break;
 
                         // Excluir
-                    case 2:
-                        deleteClient(scan);
-                        break;
+                        case 2:
+                            deleteClient(scan);
+                            break;
 
-                    // Mostrar todos
-                    case 3:
-                        findAll();
-                        break;
+                        // Mostrar todos
+                        case 3:
+                            findAll();
+                            break;
 
                         // Mostrar por ID
-                    case 4:
-                        findById(scan);
-                        break;
+                        case 4:
+                            findById(scan);
+                            break;
 
                         // Atualizar
-                    case 5:
-                        updateClient(scan);
-                        break;
-                    default:
-                }
+                        case 5:
+                            updateClient(scan);
+                            break;
+                        default:
+                    }
+                } while (choiceClient != 0);
+
             } else if(choice == 2) {
                 System.out.println("ENTROU NO ELSE IF");
             } else {
