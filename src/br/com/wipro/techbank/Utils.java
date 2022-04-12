@@ -1,13 +1,13 @@
 package br.com.wipro.techbank;
 
-public class Uteis {
+public class Utils {
 
     static final String menu = String.format("================================== GERENCIAMENTO DE CONTAS ======================================" +
             "\n0 - SAIR" +
-            "\n1 - Cliente" +
+            "\n1 - Clientes" +
             "\n2 - Contas" );
 
-    static  final String subMenu = String.format("0 - SAIR" +
+    static  final String subMenu = String.format("0 - Voltar ao menu anterior" +
             "\n1 - Adicionar" +
             "\n2 - Excluir" +
             "\n3 - Mostrar todos" +

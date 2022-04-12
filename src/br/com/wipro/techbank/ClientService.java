@@ -27,8 +27,9 @@ public class ClientService {
         }
 
         Client client = clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
-        System.out.println(client);
-        System.out.println("\n\n\n\n");
+
+        System.out.println(client + "\n\n\n\n");
+
         return client;
     }
 

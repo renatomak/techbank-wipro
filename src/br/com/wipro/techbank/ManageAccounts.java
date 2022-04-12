@@ -11,7 +11,7 @@ public class ManageAccounts {
         Byte choice = 0;
 
         do {
-            System.out.println(Uteis.menu);
+            System.out.println(Utils.menu);
             choice = scan.nextByte();
             clearBuffer(scan);
 
@@ -19,7 +19,7 @@ public class ManageAccounts {
                 Byte choiceClient = 0;
 
                 do {
-                    System.out.println(Uteis.subMenu);
+                    System.out.println(Utils.subMenu);
                     choiceClient = scan.nextByte();
                     clearBuffer(scan);
                     switch (choiceClient) {
