@@ -16,6 +16,13 @@ public class Client {
         this.email = email;
     }
 
+    public Client(String name, String cpf, String phoneNumber, String email) {
+        this.name = name;
+        this.cpf = cpf;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
     public Long getId() {
         return id;
     }
@@ -36,4 +43,18 @@ public class Client {
         return email;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
