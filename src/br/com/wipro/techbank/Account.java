@@ -36,5 +36,5 @@ public abstract class Account {
 
     public abstract void withDraw(Double value);
 
-    public abstract void transfer(Double value);
+    public abstract void transfer(Double value, Account account);
 }
