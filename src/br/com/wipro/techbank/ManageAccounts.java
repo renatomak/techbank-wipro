@@ -43,6 +43,7 @@ public class ManageAccounts {
 
                         // Atualizar
                     case 5:
+                        updateClient(scan);
                         break;
                     default:
                 }
@@ -58,6 +59,27 @@ public class ManageAccounts {
         scan.close();
     }
 
+    private static void updateClient(Scanner scanner) {
+        System.out.println("ID: ");
+        Long id = scanner.nextLong();
+        clearBuffer(scanner);
+
+        System.out.println("Nome: ");
+        String name = scanner.nextLine();
+
+        System.out.println("CPF: ");
+        String cpf = scanner.nextLine();
+
+        System.out.println("Telefone: ");
+        String phone = scanner.nextLine();
+
+        System.out.println("Email: ");
+        String email = scanner.nextLine();
+
+        Client client = new Client(id, name, cpf, phone, email);
+
+        clinetService.update(client);
+    }
 
     private static void findAll() {
         clinetService.findAll();

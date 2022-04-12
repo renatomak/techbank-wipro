@@ -1,5 +1,7 @@
 package br.com.wipro.techbank;
 
+import java.util.Objects;
+
 public class Client {
 
     private Long id;
@@ -56,5 +58,18 @@ public class Client {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return Objects.equals(id, client.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

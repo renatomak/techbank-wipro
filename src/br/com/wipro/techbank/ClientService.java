@@ -13,13 +13,16 @@ public class ClientService {
         clients.add(client);
     }
 
-    public void findById(Long id) {
+    public Client findById(Long id) {
         Client client = clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
         System.out.println(client);
+        return client;
     }
 
     public void deleteById(Long id) {
-        int index = (int) (id - 1);
+        Client removeClient = findById(id);
+        int index = clients.indexOf(removeClient);
+
         Client client = clients.remove(index);
 
         if(client != null) {
@@ -32,5 +35,16 @@ public class ClientService {
 
     public void findAll() {
         clients.forEach(item -> System.out.println(item));
+    }
+
+    public void update(Client client) {
+        int index = clients.indexOf(client);
+
+        if(index == -1) {
+            System.out.printf("Cliente com ID %d não existe.\n", index);
+        } else {
+            clients.remove(index);
+            clients.add(client);
+        }
     }
 }
