@@ -6,10 +6,10 @@ public abstract class Account {
 
     private Long number;
     private BigDecimal balance;
-    private String client;
+    private Client client;
     private String creditCard;
 
-    public Account(Long number, BigDecimal balance, String client, String creditCard) {
+    public Account(Long number, BigDecimal balance, Client client, String creditCard) {
         this.number = number;
         this.balance = balance;
         this.client = client;
@@ -24,7 +24,7 @@ public abstract class Account {
         return balance;
     }
 
-    public String getClient() {
+    public Client getClient() {
         return client;
     }
 
