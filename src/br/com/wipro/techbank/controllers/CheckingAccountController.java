@@ -1,8 +1,11 @@
 package br.com.wipro.techbank.controllers;
 
+import br.com.wipro.techbank.services.CheckingAccountService;
+
 import java.util.Scanner;
 
 public class CheckingAccountController extends ManagerAbstract{
+    private static CheckingAccountService checkingAccountService = new CheckingAccountService();
 
     @Override
     public void update(Scanner scan) {
@@ -10,18 +13,22 @@ public class CheckingAccountController extends ManagerAbstract{
     }
 
     @Override
-    public void findById(Scanner scan) {
-        System.out.println("Falta implementar o método FINDBYID  em Conta Corrente");
+    public void findById(Scanner scanner) {
+        System.out.println("Informe o Número do Conta Corrente: ");
+        Long id = scanner.nextLong();
+        checkingAccountService.findById(id);
     }
 
     @Override
     public void findAll() {
-        System.out.println("Falta implementar o método FINDALL  em Conta Corrente");
+        checkingAccountService.findAll();
     }
 
     @Override
-    public void delete(Scanner scan) {
-        System.out.println("Falta implementar o método DELETE  em Conta Corrente");
+    public void delete(Scanner scanner) {
+        System.out.println("Informe o Número do Conta Corrente: ");
+        Long id = scanner.nextLong();
+        checkingAccountService.deleteById(id);
     }
 
     @Override
