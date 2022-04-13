@@ -1,4 +1,4 @@
-package br.com.wipro.techbank.service;
+package br.com.wipro.techbank.services;
 
 public class CheckingAccountService {
 }

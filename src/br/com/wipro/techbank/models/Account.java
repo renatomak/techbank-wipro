@@ -1,4 +1,4 @@
-package br.com.wipro.techbank.model;
+package br.com.wipro.techbank.models;
 
 public abstract class Account {
 

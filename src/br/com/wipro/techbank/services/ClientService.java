@@ -1,6 +1,6 @@
-package br.com.wipro.techbank.service;
+package br.com.wipro.techbank.services;
 
-import br.com.wipro.techbank.model.Client;
+import br.com.wipro.techbank.models.Client;
 
 import java.util.ArrayList;
 import java.util.List;
