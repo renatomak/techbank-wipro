@@ -1,4 +1,6 @@
-package br.com.wipro.techbank;
+package br.com.wipro.techbank.service;
+
+import br.com.wipro.techbank.model.Client;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +51,7 @@ public class ClientService {
 
     public void findAll() {
         clients.forEach(item -> System.out.println(item));
-        System.out.println("\n\n\n\n");
+        System.out.println("\n");
     }
 
     public Client update(Client client) {

@@ -13,4 +13,8 @@ public class Utils {
             "\n3 - Mostrar todos" +
             "\n4 - Mostrar por ID" +
             "\n5 - Atualizar");
+
+    static  final String subMenuAccounts = String.format("0 - Voltar ao menu anterior" +
+            "\n1 - Conta Corrente" +
+            "\n2 - Conta Especial");
 }

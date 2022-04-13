@@ -1,4 +1,4 @@
-package br.com.wipro.techbank;
+package br.com.wipro.techbank.model;
 
 import java.util.Objects;
 
@@ -51,13 +51,11 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Client " + name +
+                ", código: " + id +
+                ", cpf: " + cpf +
+                ", phoneNumber: " + phoneNumber +
+                ", email: " + email;
     }
 
     @Override

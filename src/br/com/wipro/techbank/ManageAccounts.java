@@ -1,5 +1,9 @@
 package br.com.wipro.techbank;
 
+import br.com.wipro.techbank.model.Client;
+import br.com.wipro.techbank.service.ClientService;
+
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -16,43 +20,9 @@ public class ManageAccounts {
             clearBuffer(scan);
 
             if(choice == 1 ) {
-                Byte choiceClient = 0;
-
-                do {
-                    System.out.println(Utils.subMenu);
-                    choiceClient = scan.nextByte();
-                    clearBuffer(scan);
-                    switch (choiceClient) {
-                        // Adicionar
-                        case 1:
-                            saveClient(scan);
-                            break;
-
-                        // Excluir
-                        case 2:
-                            deleteClient(scan);
-                            break;
-
-                        // Mostrar todos
-                        case 3:
-                            findAll();
-                            break;
-
-                        // Mostrar por ID
-                        case 4:
-                            findById(scan);
-                            break;
-
-                        // Atualizar
-                        case 5:
-                            updateClient(scan);
-                            break;
-                        default:
-                    }
-                } while (choiceClient != 0);
-
+                manageClients(scan);
             } else if(choice == 2) {
-                System.out.println("ENTROU NO ELSE IF");
+                manageSpecialAccount(scan);
             } else {
                 System.out.println("ENTROU NO ELSE");
             }
@@ -61,6 +31,165 @@ public class ManageAccounts {
 
 
         scan.close();
+    }
+    private static void manageClients(Scanner scan) {
+        Byte choiceClient = 0;
+
+        do {
+            System.out.println(Utils.subMenu);
+            choiceClient = scan.nextByte();
+            clearBuffer(scan);
+            switch (choiceClient) {
+                // Adicionar
+                case 1:
+                    saveClient(scan);
+                    break;
+
+                // Excluir
+                case 2:
+                    deleteClient(scan);
+                    break;
+
+                // Mostrar todos
+                case 3:
+                    findAllClients();
+                    break;
+
+                // Mostrar por ID
+                case 4:
+                    findByIdClient(scan);
+                    break;
+
+                // Atualizar
+                case 5:
+                    updateClient(scan);
+                    break;
+                default:
+                    System.out.println("Opção inválida! Você vai retornar ao menu anterior.");
+                    choiceClient = 0;
+            }
+        } while (choiceClient != 0);
+    }
+
+    private static void manageCheckingAccount(Scanner scan) {
+        Byte choiceCheckingAccount = 0;
+
+        do {
+            System.out.println(Utils.subMenu);
+            choiceCheckingAccount = scan.nextByte();
+            clearBuffer(scan);
+            switch (choiceCheckingAccount) {
+                // Adicionar
+                case 1:
+                    saveCheckingAccount(scan);
+                    break;
+
+                // Excluir
+                case 2:
+                    deleteCheckingAccount(scan);
+                    break;
+
+                // Mostrar todos
+                case 3:
+                    findAllCheckingAccount();
+                    break;
+
+                // Mostrar por ID
+                case 4:
+                    findByIdCheckingAccount(scan);
+                    break;
+
+                // Atualizar
+                case 5:
+                    updateCheckingAccount(scan);
+                    break;
+                default:
+            }
+        } while (choiceCheckingAccount != 0);
+    }
+
+    private static void manageSpecialAccount(Scanner scan) {
+        System.out.println(Utils.subMenuAccounts);
+        Byte choiceAccount = scan.nextByte();
+        if(choiceAccount == 1){
+            manageCheckingAccount(scan);
+        } else if (choiceAccount == 2){
+            System.out.println("ENTROU NO ELSE IF");
+            Byte choiceSpecialAccount = 0;
+
+            do {
+                System.out.println(Utils.subMenu);
+                choiceSpecialAccount = scan.nextByte();
+                clearBuffer(scan);
+                switch (choiceSpecialAccount) {
+                    // Adicionar
+                    case 1:
+                        saveSpecialAccount(scan);
+                        break;
+
+                    // Excluir
+                    case 2:
+                        deleteSpecialAccount(scan);
+                        break;
+
+                    // Mostrar todos
+                    case 3:
+                        findAllSpecialAccount();
+                        break;
+
+                    // Mostrar por ID
+                    case 4:
+                        findByIdSpecialAccount(scan);
+                        break;
+
+                    // Atualizar
+                    case 5:
+                        updateSpecialAccount(scan);
+                        break;
+                    default:
+                }
+            } while (choiceSpecialAccount != 0);
+        }
+
+    }
+    private static void updateCheckingAccount(Scanner scan) {
+        System.out.println("Falta implementar o método UPDATE em Conta Corrente");
+    }
+
+    private static void findByIdCheckingAccount(Scanner scan) {
+        System.out.println("Falta implementar o método FINDBYID  em Conta Corrente");
+    }
+
+    private static void findAllCheckingAccount() {
+        System.out.println("Falta implementar o método FINDALL  em Conta Corrente");
+    }
+
+    private static void deleteCheckingAccount(Scanner scan) {
+        System.out.println("Falta implementar o método DELETE  em Conta Corrente");
+    }
+
+    private static void saveCheckingAccount(Scanner scan) {
+        System.out.println("Falta implementar o método SAVE  em Conta Corrente");
+    }
+
+    private static void updateSpecialAccount(Scanner scan) {
+        System.out.println("Falta implementar o método UPDATE em Conta Especial");
+    }
+
+    private static void findByIdSpecialAccount(Scanner scan) {
+        System.out.println("Falta implementar o método FINDBYID  em Conta Especial");
+    }
+
+    private static void findAllSpecialAccount() {
+        System.out.println("Falta implementar o método FINDALL  em Conta Especial");
+    }
+
+    private static void deleteSpecialAccount(Scanner scan) {
+        System.out.println("Falta implementar o método DELETE em Conta Especial");
+    }
+
+    private static void saveSpecialAccount(Scanner scan) {
+        System.out.println("Falta implementar o método SAVE em Conta Especial");
     }
 
     private static void updateClient(Scanner scanner) {
@@ -85,7 +214,7 @@ public class ManageAccounts {
         clinetService.update(client);
     }
 
-    private static void findAll() {
+    private static void findAllClients() {
         clinetService.findAll();
     }
 
@@ -95,7 +224,7 @@ public class ManageAccounts {
         clinetService.deleteById(id);
     }
 
-    private static void findById(Scanner scanner) {
+    private static void findByIdClient(Scanner scanner) {
         System.out.println("Informe o ID do cliente: ");
         Long id = scanner.nextLong();
         clinetService.findById(id);
