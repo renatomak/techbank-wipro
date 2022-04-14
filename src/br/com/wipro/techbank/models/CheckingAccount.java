@@ -1,4 +1,4 @@
-package br.com.wipro.techbank;
+package br.com.wipro.techbank.models;
 
 public class CheckingAccount extends Account {
 
