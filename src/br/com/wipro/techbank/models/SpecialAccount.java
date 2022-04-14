@@ -1,6 +1,9 @@
-package br.com.wipro.techbank;
+package br.com.wipro.techbank.models;
 
-public class SpecialAccount extends Account{
+import br.com.wipro.techbank.models.Account;
+import br.com.wipro.techbank.models.Client;
+
+public class SpecialAccount extends Account {
 
 	private Double limit;
 	private Double usedLimit;

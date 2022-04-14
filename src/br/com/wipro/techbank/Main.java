@@ -1,9 +1,11 @@
 package br.com.wipro.techbank;
 
+import br.com.wipro.techbank.models.Client;
+import br.com.wipro.techbank.models.SpecialAccount;
+
 public class Main {
 
     public static void main(String[] args) {
-//        System.out.println("REnato ");
         
         Client junior = new Client(1L, "Junior", "816.413.864.98", "(13)99183-6713", "junior007@gmail.com");
         SpecialAccount sAccount = new SpecialAccount(1L,500.0,junior,"15456487879",500.00);
@@ -15,11 +17,11 @@ public class Main {
         sAccount.withDraw(510.00);
         
         System.out.println("###### TRANSFERENCIA de Conta 1 para Conta 2#######");
-        System.out.println("Saldo Conta 2 antes da Transferência:  " +  sAccount2.getBalance() +"\n \n");
+        System.out.println("Saldo Conta 2 antes da Transferï¿½ncia:  " +  sAccount2.getBalance() +"\n \n");
         
-        System.out.println("Informações Conta 1 após a operação:");
+        System.out.println("Informaï¿½ï¿½es Conta 1 apï¿½s a operaï¿½ï¿½o:");
         sAccount.transfer(80.00, sAccount2);
-        System.out.println("\nSaldo Conta depois da Transferência: " +  sAccount2.getBalance());
+        System.out.println("\nSaldo Conta depois da Transferï¿½ncia: " +  sAccount2.getBalance());
         
     }
 }
