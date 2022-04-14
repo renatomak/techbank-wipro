@@ -4,7 +4,7 @@ import br.com.wipro.techbank.Utils;
 
 import java.util.Scanner;
 
-public class ManagerAbstract implements ManagerInterface{
+public class ManagerAbstract implements ManagerInterface {
     @Override
     public void manager(Scanner scan) {
         Byte choice = 0;
