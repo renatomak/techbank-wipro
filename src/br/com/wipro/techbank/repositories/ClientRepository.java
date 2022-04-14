@@ -1,0 +1,63 @@
+package br.com.wipro.techbank.repositories;
+
+import br.com.wipro.techbank.models.Client;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ClientRepository {
+    private List<Client> clients = new ArrayList<>();
+
+    private Long lenghtClients = 0L;
+
+    public Client save(Client client) {
+        client.setId(lenghtClients);
+        clients.add(client);
+        this.lenghtClients += 1;
+        if(clients.size() != lenghtClients + 1) {
+            return null;
+        }
+        return client;
+    }
+
+    public Client findById(Long id) {
+        if (id >= clients.size()){
+            return null;
+        }
+       return clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
+    }
+
+    public Boolean deleteById(Long id) {
+        Client removeClient = findById(id);
+        int index = clients.indexOf(removeClient);
+
+        if(index == -1) {
+            return  false;
+        }
+
+        Client client = clients.remove(index);
+
+        if(client != null) {
+           return true;
+        }
+        return false;
+    }
+
+    public List<Client> findAll() {
+        return clients;
+    }
+
+    public Client update(Client client) {
+        int index = clients.indexOf(client);
+
+        if(index == -1) {
+            return  null;
+        }
+
+        clients.remove(index);
+        clients.add(client);
+
+        return  client;
+    }
+}
