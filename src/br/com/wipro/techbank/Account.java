@@ -3,7 +3,7 @@ package br.com.wipro.techbank;
 public abstract class Account {
 
     private Long number;
-    private Double balance;
+    protected Double balance;
     private Client client;
     private String creditCard;
 
