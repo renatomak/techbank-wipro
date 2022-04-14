@@ -9,13 +9,13 @@ import java.util.stream.Collectors;
 public class ClientRepository {
     private List<Client> clients = new ArrayList<>();
 
-    private Long lenghtClients = 0L;
+    private Long length = 0L;
 
     public Client save(Client client) {
-        client.setId(lenghtClients);
+        client.setId(length);
         clients.add(client);
-        this.lenghtClients += 1;
-        if(clients.size() != lenghtClients + 1) {
+        this.length += 1;
+        if(clients.size() != length + 1) {
             return null;
         }
         return client;

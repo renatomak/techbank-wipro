@@ -13,7 +13,9 @@ public abstract class Account {
         this.client = client;
         this.creditCard = creditCard;
     }
-
+    public void setNumber(Long number) {
+        this.number = number;
+    }
     public Long getNumber() {
         return number;
     }
