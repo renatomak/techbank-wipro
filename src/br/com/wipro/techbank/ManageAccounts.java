@@ -23,7 +23,9 @@ public class ManageAccounts {
 
             if(choice == 1 ) {
                 clientController.manager(scan);
-            } else if(choice == 2) {
+            } else if (choice == 2) {
+                System.out.println("Criar Cartão");
+            } else if(choice == 3) {
                 System.out.println(Utils.subMenuAccounts);
                 Byte choiceAccount = scan.nextByte();
 
