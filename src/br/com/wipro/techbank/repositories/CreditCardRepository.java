@@ -4,9 +4,8 @@ import br.com.wipro.techbank.models.CreditCard;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class CreditCardReposotory {
+public class CreditCardRepository {
     List<CreditCard> list = new ArrayList<>();
 
     private static Long length = 0L;
