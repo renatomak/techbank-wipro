@@ -2,18 +2,21 @@ package br.com.wipro.techbank.controllers;
 
 import java.util.Scanner;
 
-import br.com.wipro.techbank.models.Account;
 import br.com.wipro.techbank.models.Client;
 import br.com.wipro.techbank.models.CreditCard;
 import br.com.wipro.techbank.models.SpecialAccount;
 import br.com.wipro.techbank.services.ClientService;
+import br.com.wipro.techbank.services.CreditCardService;
 import br.com.wipro.techbank.services.SpecialAccountService;
 
 public class SpecialAccountController extends ManagerAbstract {
 
     private static SpecialAccountService specialAccounService = new SpecialAccountService();
-    private static ClientService clientService = new ClientService();
-    // private static creditCardService = new CreditCardSerice();
+//    private static ClientService clientService = new ClientService();
+    
+    private static ClientService clientService = ClientService.getInstance();
+    
+    private static CreditCardService creditCardService = new CreditCardService();
 
     @Override
     public void findById(Scanner scanner) {
@@ -37,20 +40,19 @@ public class SpecialAccountController extends ManagerAbstract {
 
     public void save(Scanner scanner) {
 
-        System.out.println("Informe o n�mero do cliente: ");
+        System.out.println("Informe o numero do cliente: ");
         Client client = clientService.findById(scanner.nextLong());
 
-        System.out.println("Informe o valor do dep�sito inicial: ");
+        System.out.println("Informe o valor do depo1sito inicial: ");
         Double valueDeposit = scanner.nextDouble();
 
-        // System.out.println("Informe o n�mero do Cart�o de Credit: ");
-        // CreditCard creditCard = creditCardServicerfindById(scanner.nextLong());
+        System.out.println("Informe o numero do Cartao de Credit: ");
+        CreditCard creditCard = creditCardService.findById(scanner.nextLong());
 
         System.out.println("Informe o valor do limite para conta: ");
         Double limit = scanner.nextDouble();
 
-        // Account specialAccount = new SpecialAccount(valueDeposit, client, creditCard,
-        // limit);
-        // specialAccounService.save(specialAccount);
+        SpecialAccount specialAccount = new SpecialAccount(valueDeposit, client, creditCard,limit);
+        specialAccounService.save(specialAccount);
     }
 }

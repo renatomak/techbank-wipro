@@ -15,7 +15,7 @@ public class SpecialAccountService {
 	        if(result != null) {
 	            System.out.println("Conta Especial adicionada com sucesso.\n");
 	        } else {
-	            System.out.println("Conta Especial n„o foi adicionado.\n");
+	            System.out.println("Conta Especial nao foi adicionado.\n");
 	        }
 	    }
 
@@ -23,7 +23,7 @@ public class SpecialAccountService {
 	        Account account = repository.findById(id);
 
 	        if (account == null){
-	            System.out.printf("Cliente com ID %d n√£o foi encontrado. \n", id);
+	            System.out.printf("Cliente com ID %d nao foi encontrado. \n", id);
 	        } else {
 	            System.out.println(account + "\n\n\n\n");
 	        }
