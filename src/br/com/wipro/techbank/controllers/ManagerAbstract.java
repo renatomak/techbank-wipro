@@ -4,13 +4,20 @@ import br.com.wipro.techbank.Utils;
 
 import java.util.Scanner;
 
+import static br.com.wipro.techbank.controllers.OriginType.CREDIT_CARD;
+
 public class ManagerAbstract implements ManagerInterface {
     @Override
-    public void manager(Scanner scan) {
+    public void manager(Scanner scan, OriginType type) {
         Byte choice = 0;
 
         do {
-            System.out.println(Utils.subMenu);
+            if (type == CREDIT_CARD) {
+                System.out.println(Utils.subMenuCreditCard);
+            } else {
+                System.out.println(Utils.subMenu);
+            }
+
             choice = scan.nextByte();
             Utils.clearBuffer(scan);
             switch (choice) {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public interface ManagerInterface {
 
-    void manager(Scanner scan);
+    void manager(Scanner scan, OriginType type);
 
     void update(Scanner scan);
 

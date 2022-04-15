@@ -4,6 +4,7 @@ import br.com.wipro.techbank.models.CreditCard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CreditCardRepository {
     List<CreditCard> list = new ArrayList<>();
@@ -11,17 +12,15 @@ public class CreditCardRepository {
     private static Long length = 0L;
 
     public CreditCard save(CreditCard creditCard) {
-
-        list.add(creditCard);
-
-        // creditCard.setNumber(length);
-
-        list.add(creditCard);
         this.length += 1;
+        creditCard.setId(length);
 
-        if (list.size() != length + 1) {
+        list.add(creditCard);
+
+        if (list.size() != length) {
             return null;
         }
+
         return creditCard;
     }
 
@@ -29,7 +28,7 @@ public class CreditCardRepository {
         if (id >= list.size()) {
             return null;
         }
-        return null;
+        return list.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
     }
 
     public Boolean deleteById(Long id) {

@@ -29,12 +29,12 @@ public class CheckingAccountController extends ManagerAbstract {
         checkingAccountService.deleteById(id);
     }
 
-    @Override
-    public void save(Scanner scanner, Client client, CreditCard creditCard) {
-        System.out.println("Informe o valor do depósito inicial: ");
-        Double valueDeposit = scanner.nextDouble();
-
-        CheckingAccount checkingAccount = new CheckingAccount(valueDeposit, client, creditCard);
-        checkingAccountService.save(checkingAccount);
-    }
+//    @Override
+//    public void save(Scanner scanner, Client client, CreditCard creditCard) {
+//        System.out.println("Informe o valor do depósito inicial: ");
+//        Double valueDeposit = scanner.nextDouble();
+//
+//        CheckingAccount checkingAccount = new CheckingAccount(valueDeposit, client, creditCard);
+//        checkingAccountService.save(checkingAccount);
+//    }
 }
