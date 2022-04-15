@@ -34,7 +34,7 @@ public class SpecialAccountService {
         if (account == null){
             System.out.printf("Conta com ID %d n�o foi encontrado. \n", id);
         } else {
-            System.out.println(account + "\n\n\n\n");
+            System.out.println(account + "\n");
         }
         return account;
     }
