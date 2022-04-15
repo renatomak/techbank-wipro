@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class CreditCard implements Serializable {
-    private static final long serialVersionUID = -102347617765968938L;
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private String cardNumber;
@@ -56,5 +56,6 @@ public class CreditCard implements Serializable {
                 ", código de segurança: " + securityCode +
                 ", limite: " + limit +
                 ", limite usado: " + usedLimit;
+
     }
 }

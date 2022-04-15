@@ -2,8 +2,8 @@ package br.com.wipro.techbank.models;
 
 public class SpecialAccount extends Account {
 
-    private Double limit;
-    private Double usedLimit;
+    private Double limit = 0.0;
+    private Double usedLimit = 0.0;
 
     public SpecialAccount(Double balance, Client client, CreditCard creditCard, Double limit) {
         super(balance, client, creditCard);
@@ -50,5 +50,13 @@ public class SpecialAccount extends Account {
             this.withDraw(value);
             account.deposit(value);
         }
+    }
+
+    @Override
+    public String toString() {
+        Double balanceAvailable = limit - usedLimit;
+        return "Conta Especial \n" + super.toString() +
+                "\nLimite Cheque especial: " + limit +
+                "\nLimite disponivel: " + balanceAvailable;
     }
 }

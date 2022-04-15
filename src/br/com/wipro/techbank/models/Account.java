@@ -1,6 +1,9 @@
 package br.com.wipro.techbank.models;
 
-public abstract class Account {
+import java.io.Serializable;
+import java.util.Objects;
+
+public abstract class Account implements Serializable {
 
     private static Long number = 0L;
     protected Double balance;
@@ -37,4 +40,25 @@ public abstract class Account {
     public abstract void withDraw(Double value);
 
     public abstract void transfer(Double value, Account account);
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return balance.equals(account.balance);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(balance);
+    }
+
+    @Override
+    public String toString() {
+        return "\nNumero: " + number +
+                "\nSaldo: " + balance +
+                "\nCliente: " + client.toString() +
+                "\nCartao de Credito: " + creditCard.toString();
+    }
 }

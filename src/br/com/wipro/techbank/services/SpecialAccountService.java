@@ -6,55 +6,55 @@ import br.com.wipro.techbank.models.Account;
 import br.com.wipro.techbank.repositories.AccountRepository;
 
 public class SpecialAccountService {
-	
+
 	private static SpecialAccountService instance = new SpecialAccountService();
-	
+
 	private AccountRepository repository = new AccountRepository();
-	
-    private SpecialAccountService() {
-    	super();
+
+	private SpecialAccountService() {
+		super();
 	}
-    
+
 	public static SpecialAccountService getInstance() {
 		return instance;
 	}
 
 	public void save(Account account) {
-        Account result = repository.save(account);
-
+		Account result = repository.save(account);
         if(result != null) {
             System.out.println("Conta especial adicionada com sucesso.\n");
         } else {
-            System.out.println("Conta especial não foi adicionado.\n");
+            System.out.println("Conta especial nï¿½o foi adicionado.\n");
         }
     }
 
-    public Account findById(Long id) {
-        Account account = repository.findById(id);
+	public Account findById(Long id) {
+		Account account = repository.findById(id);
 
         if (account == null){
-            System.out.printf("Conta com ID %d não foi encontrado. \n", id);
+            System.out.printf("Conta com ID %d nï¿½o foi encontrado. \n", id);
         } else {
             System.out.println(account + "\n\n\n\n");
         }
         return account;
     }
 
-    public void deleteById(Long id) {
-        Boolean result = repository.deleteById(id);
+
+	public void deleteById(Long id) {
+		Boolean result = repository.deleteById(id);
 
         if(result) {
             System.out.printf("Conta com ID %d foi removido com sucesso!\n", id);
         } else {
             System.out.printf("Erro ao tentar remover a conta com ID %d.\n", id);
         }
-    }
 
-    public void findAll() {
-        List<Account> accountList = repository.findAll();
+	}
 
-        accountList.forEach(item -> System.out.println(item));
+	public void findAll() {
+		List<Account> accountList = repository.findAll();
+		accountList.forEach(item -> System.out.println(item));
+		System.out.println("\n");
+	}
 
-        System.out.println("\n");
-    }
 }

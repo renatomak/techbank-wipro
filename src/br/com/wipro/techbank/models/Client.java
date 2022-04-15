@@ -23,30 +23,28 @@ public class Client {
     public Long getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public String getCpf() {
         return cpf;
     }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     @Override
     public String toString() {
-        return id + "," + name + "," + cpf + "," + phoneNumber + "," + email;
+        return "Cliente:  " + name +
+                "\nCodigo: " + id +
+                "\nCPF: " + cpf +
+                "\nTelefone: " + phoneNumber +
+                "\nE-mail: " + email;
     }
 
     @Override
@@ -62,3 +60,5 @@ public class Client {
         return Objects.hash(id);
     }
 }
+
+
