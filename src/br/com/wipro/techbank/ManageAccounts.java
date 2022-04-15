@@ -1,18 +1,16 @@
 package br.com.wipro.techbank;
 
-import br.com.wipro.techbank.controllers.CheckingAccountController;
-import br.com.wipro.techbank.controllers.ClientController;
-import br.com.wipro.techbank.controllers.CreditCardController;
-import br.com.wipro.techbank.controllers.SpecialAccountController;
+import br.com.wipro.techbank.controllers.*;
 
 import java.util.Locale;
 import java.util.Scanner;
+
+import static br.com.wipro.techbank.controllers.OriginType.*;
 
 public class ManageAccounts {
     private static ClientController clientController = new ClientController();
     private static SpecialAccountController specialAccountController = new SpecialAccountController();
     private static CheckingAccountController checkingAccountController = new CheckingAccountController();
-
     private static CreditCardController creditCardController = new CreditCardController();
 
     public static void main(String[] args) {
@@ -25,17 +23,17 @@ public class ManageAccounts {
             Utils.clearBuffer(scan);
 
             if(choice == 1 ) {
-                clientController.manager(scan, "CLIENT");
+                clientController.manager(scan, CLIENT);
             } else if (choice == 2) {
-                creditCardController.manager(scan, "CREDIT_CARD");
+                creditCardController.manager(scan, CREDIT_CARD);
             } else if(choice == 3) {
                 System.out.println(Utils.subMenuAccounts);
                 Byte choiceAccount = scan.nextByte();
 
                 if(choiceAccount == 1){
-                    checkingAccountController.manager(scan, "CHCKING_ACCOUNT");
+                    checkingAccountController.manager(scan, CHECKING_ACCOUNT);
                 } else if (choiceAccount == 2) {
-                    specialAccountController.manager(scan, "SPECIAL_ACCOUNT");
+                    specialAccountController.manager(scan, SPECIAL_ACCOUNT);
                 }
             } else {
                 System.out.println("Opção inválida! Tente novamente...");
