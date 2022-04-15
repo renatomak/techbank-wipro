@@ -12,7 +12,7 @@ public class CreditCardRepository {
     private static Long length = 0L;
 
     public CreditCard save(CreditCard creditCard) {
-        this.length += 1;
+        this.length++;
         creditCard.setId(length);
 
         list.add(creditCard);

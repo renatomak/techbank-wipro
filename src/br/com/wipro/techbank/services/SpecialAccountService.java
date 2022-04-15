@@ -23,7 +23,7 @@ public class SpecialAccountService {
 	        Account account = repository.findById(id);
 
 	        if (account == null){
-	            System.out.printf("Cliente com ID %d não foi encontrado. \n", id);
+	            System.out.printf("Cliente com ID %d nao foi encontrado. \n", id);
 	        } else {
 	            System.out.println(account + "\n\n\n\n");
 	        }

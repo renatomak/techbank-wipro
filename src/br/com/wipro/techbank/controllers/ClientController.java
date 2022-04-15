@@ -27,7 +27,7 @@ public class ClientController extends ManagerAbstract {
         System.out.println("Email: ");
         String email = scanner.nextLine();
 
-        Client client = new Client(id, name, cpf, phone, email);
+        Client client = new Client(name, cpf, phone, email);
 
         clientService.update(client);
     }
@@ -65,7 +65,7 @@ public class ClientController extends ManagerAbstract {
 //
 //        System.out.println("Email: ");
 //        String email = scanner.nextLine();
-//
+////
 //        Client client = new Client(name, cpf, phone, email);
         Client client = new Client("Renato Maques", "123456789", "6299999999", "renato@gmail.com");
         clientService.save(client);

@@ -8,7 +8,7 @@ public class Utils {
             "================================== GERENCIAMENTO DE CONTAS ======================================" +
                     "\n0 - SAIR" +
                     "\n1 - Clientes" +
-                    "\n2 - Cartão de Credito" +
+                    "\n2 - Cartao de Credito" +
                     "\n3 - Contas");
 
     public static String subMenu = String.format("0 - Voltar ao menu anterior" +

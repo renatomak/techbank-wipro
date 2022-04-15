@@ -20,6 +20,7 @@ public class ClientService {
     }
 
     public Client findById(Long id) {
+        System.out.println("ID: " + id);
         Client client = repository.findById(id);
 
         if (client == null) {

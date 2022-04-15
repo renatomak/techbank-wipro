@@ -3,22 +3,24 @@ package br.com.wipro.techbank.models;
 import java.util.Objects;
 
 public class Client {
-
-    private Long numero;
+    private static Long length = 0L;
+    private Long id;
     private String name;
     private String cpf;
     private String phoneNumber;
     private String email;
 
-    public Client(Long id, String name, String cpf, String phoneNumber, String email) {
-        this.numero = id;
+    public Client(String name, String cpf, String phoneNumber, String email) {
+        length++;
+        this.id = length;
         this.name = name;
         this.cpf = cpf;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public Client(String name, String cpf, String phoneNumber, String email) {
+    public Client(Long id, String name, String cpf, String phoneNumber, String email) {
+        this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.phoneNumber = phoneNumber;
@@ -26,7 +28,7 @@ public class Client {
     }
 
     public Long getId() {
-        return numero;
+        return id;
     }
 
     public String getName() {
@@ -46,16 +48,12 @@ public class Client {
     }
 
     public void setId(Long id) {
-        this.numero = id;
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "Client " + name +
-                ", código: " + numero +
-                ", cpf: " + cpf +
-                ", phoneNumber: " + phoneNumber +
-                ", email: " + email;
+        return id + "," + name + "," + cpf + "," + phoneNumber + "," + email;
     }
 
     @Override
@@ -63,11 +61,11 @@ public class Client {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return Objects.equals(numero, client.numero);
+        return Objects.equals(id, client.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numero);
+        return Objects.hash(id);
     }
 }

@@ -2,23 +2,25 @@ package br.com.wipro.techbank.controllers;
 
 import java.util.Scanner;
 
+import br.com.wipro.techbank.Utils;
 import br.com.wipro.techbank.models.Account;
 import br.com.wipro.techbank.models.Client;
 import br.com.wipro.techbank.models.CreditCard;
 import br.com.wipro.techbank.models.SpecialAccount;
 import br.com.wipro.techbank.services.ClientService;
+import br.com.wipro.techbank.services.CreditCardService;
 import br.com.wipro.techbank.services.SpecialAccountService;
 
 public class SpecialAccountController extends ManagerAbstract {
 
     private static SpecialAccountService specialAccounService = new SpecialAccountService();
     private static ClientService clientService = new ClientService();
-    // private static creditCardService = new CreditCardSerice();
+    private static CreditCardService creditCardService = new CreditCardService();
 
     @Override
     public void findById(Scanner scanner) {
 
-        System.out.println("Informe o ID do cliente: ");
+        System.out.println("Informe o ID do conta: ");
         Long id = scanner.nextLong();
         specialAccounService.findById(id);
     }
@@ -30,27 +32,33 @@ public class SpecialAccountController extends ManagerAbstract {
 
     @Override
     public void delete(Scanner scan) {
-        System.out.println("Informe o ID do cliente: ");
+        System.out.println("Informe o ID do conta: ");
         Long id = scan.nextLong();
         specialAccounService.deleteById(id);
     }
 
     public void save(Scanner scanner) {
 
-        System.out.println("Informe o n�mero do cliente: ");
+        System.out.println("Informe o numero do cliente: ");
         Client client = clientService.findById(scanner.nextLong());
+        Utils.clearBuffer(scanner);
 
-        System.out.println("Informe o valor do dep�sito inicial: ");
+        System.out.println("Informe o valor do deposito inicial: ");
         Double valueDeposit = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
 
-        // System.out.println("Informe o n�mero do Cart�o de Credit: ");
-        // CreditCard creditCard = creditCardServicerfindById(scanner.nextLong());
+        System.out.println("Informe o numero do Cartao de Credit: ");
+        CreditCard creditCard = creditCardService.findById(scanner.nextLong());
+        Utils.clearBuffer(scanner);
+
+        System.out.println("CARTÃO: " + creditCard);
 
         System.out.println("Informe o valor do limite para conta: ");
         Double limit = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
 
-        // Account specialAccount = new SpecialAccount(valueDeposit, client, creditCard,
-        // limit);
-        // specialAccounService.save(specialAccount);
+         Account specialAccount = new SpecialAccount(valueDeposit, client, creditCard,
+         limit);
+         specialAccounService.save(specialAccount);
     }
 }
