@@ -22,4 +22,9 @@ public class CheckingAccount extends Account {
             account.deposit(value);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Conta Corrente \n" + super.toString();
+    }
 }

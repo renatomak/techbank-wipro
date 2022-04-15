@@ -2,6 +2,7 @@ package br.com.wipro.techbank.controllers;
 
 import java.util.Scanner;
 
+import br.com.wipro.techbank.Utils;
 import br.com.wipro.techbank.models.Client;
 import br.com.wipro.techbank.models.CreditCard;
 import br.com.wipro.techbank.models.SpecialAccount;
@@ -20,8 +21,9 @@ public class SpecialAccountController extends ManagerAbstract {
     @Override
     public void findById(Scanner scanner) {
 
-        System.out.println("Informe o ID do cliente: ");
+        System.out.println("Informe o ID do Conta: ");
         Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
         specialAccounService.findById(id);
     }
 
@@ -32,7 +34,7 @@ public class SpecialAccountController extends ManagerAbstract {
 
     @Override
     public void delete(Scanner scan) {
-        System.out.println("Informe o ID do cliente: ");
+        System.out.println("Informe o ID do Conta: ");
         Long id = scan.nextLong();
         specialAccounService.deleteById(id);
     }
@@ -41,15 +43,18 @@ public class SpecialAccountController extends ManagerAbstract {
 
         System.out.println("Informe o numero do cliente: ");
         Client client = clientService.findById(scanner.nextLong());
+        Utils.clearBuffer(scanner);
 
         System.out.println("Informe o valor do depo1sito inicial: ");
         Double valueDeposit = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
 
         System.out.println("Informe o numero do Cartao de Credit: ");
         CreditCard creditCard = creditCardService.findById(scanner.nextLong());
 
         System.out.println("Informe o valor do limite para conta: ");
         Double limit = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
 
         SpecialAccount specialAccount = new SpecialAccount(valueDeposit, client, creditCard,limit);
         specialAccounService.save(specialAccount);

@@ -7,19 +7,19 @@ import java.util.List;
 
 public class ClientService {
 
-	private static ClientService instance = new ClientService();
-	
+    private static ClientService instance = new ClientService();
+
     private ClientRepository repository = new ClientRepository();
 
     private ClientService() {
-		super();
-	}
-    
-	public static ClientService getInstance() {
-		return instance;
-	}
+        super();
+    }
 
-	public void save(Client client) {
+    public static ClientService getInstance() {
+        return instance;
+    }
+
+    public void save(Client client) {
         Client result = repository.save(client);
 
         if (result != null) {
@@ -37,7 +37,7 @@ public class ClientService {
         } else {
             System.out.println(client + "\n\n\n\n");
         }
-        
+
         System.err.println("ID CLiente: " + client.getId());
         return client;
     }
@@ -56,7 +56,8 @@ public class ClientService {
     public void findAll() {
         List<Client> clientList = repository.findAll();
 
-        clientList.forEach(item -> System.out.println(item));
+        clientList.forEach(item -> System.out.println("Cliente: " + item.getName() + ", Codigo: " + item.getId() +
+                ", CPF: " + item.getCpf() + ", Telefone: " + item.getPhoneNumber() + ", E-mail: " + item.getEmail()));
 
         System.out.println("\n");
     }
