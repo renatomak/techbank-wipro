@@ -1,15 +1,12 @@
 package br.com.wipro.techbank.models;
 
-import br.com.wipro.techbank.models.Account;
-import br.com.wipro.techbank.models.Client;
-
 public class SpecialAccount extends Account {
 
     private Double limit;
     private Double usedLimit;
 
-    public SpecialAccount(Long number, Double balance, Client client, String creditCard, Double limit) {
-        super(number, balance, client, creditCard);
+    public SpecialAccount(Double balance, Client client, CreditCard creditCard, Double limit) {
+        super(balance, client, creditCard);
         this.limit = limit;
     }
 
@@ -24,7 +21,6 @@ public class SpecialAccount extends Account {
     public void setUsedLimit(Double usedLimit) {
         this.usedLimit = usedLimit;
     }
-
 
     @Override
     public void withDraw(Double value) {

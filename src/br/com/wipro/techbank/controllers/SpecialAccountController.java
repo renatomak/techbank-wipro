@@ -1,32 +1,56 @@
 package br.com.wipro.techbank.controllers;
 
-
 import java.util.Scanner;
+
+import br.com.wipro.techbank.models.Account;
+import br.com.wipro.techbank.models.Client;
+import br.com.wipro.techbank.models.CreditCard;
+import br.com.wipro.techbank.models.SpecialAccount;
+import br.com.wipro.techbank.services.ClientService;
+import br.com.wipro.techbank.services.SpecialAccountService;
 
 public class SpecialAccountController extends ManagerAbstract {
 
-    @Override
-    public void update(Scanner scan) {
-        System.out.println("Falta implementar o método UPDATE em Conta Especial");
-    }
+    private static SpecialAccountService specialAccounService = new SpecialAccountService();
+    private static ClientService clientService = new ClientService();
+    // private static creditCardService = new CreditCardSerice();
 
     @Override
-    public void findById(Scanner scan) {
-        System.out.println("Falta implementar o método FINDBYID em Conta Especial");
+    public void findById(Scanner scanner) {
+
+        System.out.println("Informe o ID do cliente: ");
+        Long id = scanner.nextLong();
+        specialAccounService.findById(id);
     }
 
     @Override
     public void findAll() {
-        System.out.println("Falta implementar o método FINDALL em Conta Especial");
+        specialAccounService.findAll();
     }
 
     @Override
     public void delete(Scanner scan) {
-        System.out.println("Falta implementar o método DELETE em Conta Especial");
+        System.out.println("Informe o ID do cliente: ");
+        Long id = scan.nextLong();
+        specialAccounService.deleteById(id);
     }
 
-    @Override
-    public void save(Scanner scan) {
-        System.out.println("Falta implementar o método SAVE em Conta Especial");
+    public void save(Scanner scanner) {
+
+        System.out.println("Informe o n�mero do cliente: ");
+        Client client = clientService.findById(scanner.nextLong());
+
+        System.out.println("Informe o valor do dep�sito inicial: ");
+        Double valueDeposit = scanner.nextDouble();
+
+        // System.out.println("Informe o n�mero do Cart�o de Credit: ");
+        // CreditCard creditCard = creditCardServicerfindById(scanner.nextLong());
+
+        System.out.println("Informe o valor do limite para conta: ");
+        Double limit = scanner.nextDouble();
+
+        // Account specialAccount = new SpecialAccount(valueDeposit, client, creditCard,
+        // limit);
+        // specialAccounService.save(specialAccount);
     }
 }
