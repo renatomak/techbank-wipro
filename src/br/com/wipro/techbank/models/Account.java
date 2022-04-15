@@ -58,7 +58,7 @@ public abstract class Account implements Serializable {
     public String toString() {
         return "\nNumero: " + number +
                 "\nSaldo: " + balance +
-                "\nCliente: " + client.toString() +
-                "\nCartao de Credito: " + creditCard.toString();
+                "\n" + client.toString() +
+                "\n" + creditCard.toString();
     }
 }

@@ -7,18 +7,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ClientRepository {
-    private List<Client> clients = new ArrayList<>();
+    private static List<Client> clients = new ArrayList<>();
 
-//    private Long length = 0L;
+    private static Long length = 0L;
 
     public Client save(Client client) {
-//        this.length += 1;
-//        client.setId(length);
+        this.length++;
+        client.setId(length);
         clients.add(client);
 
-//        if (clients.size() != length) {
-//            return null;
-//        }
+        if (clients.size() != length) {
+            return null;
+        }
 
         return client;
     }
@@ -51,8 +51,9 @@ public class ClientRepository {
     }
 
     public Client update(Client client) {
+        System.out.println("CLIENTE: " + client);
         int index = clients.indexOf(client);
-
+        System.out.println("INDEX: " + index);
         if (index == -1) {
             return null;
         }
