@@ -8,12 +8,12 @@ public abstract class Account {
     private CreditCard creditCard;
 
     public Account(Double balance, Client client, CreditCard creditCard) {
-        this.number = number ++;
+        this.number = number++;
         this.balance = balance;
         this.client = client;
         this.creditCard = creditCard;
     }
-    
+
     public Long getNumber() {
         return number;
     }
@@ -30,7 +30,7 @@ public abstract class Account {
         return creditCard;
     }
 
-    public void deposit(Double value){
+    public void deposit(Double value) {
         this.balance += value;
     }
 
