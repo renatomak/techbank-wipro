@@ -2,20 +2,18 @@ package br.com.wipro.techbank.models;
 
 public abstract class Account {
 
-    private Long number;
+    private static Long number;
     protected Double balance;
     private Client client;
-    private String creditCard;
+    private CreditCard creditCard;
 
-    public Account(Long number, Double balance, Client client, String creditCard) {
-        this.number = number;
+    public Account(Double balance, Client client, CreditCard creditCard) {
+        this.number = number ++;
         this.balance = balance;
         this.client = client;
         this.creditCard = creditCard;
     }
-    public void setNumber(Long number) {
-        this.number = number;
-    }
+    
     public Long getNumber() {
         return number;
     }
@@ -28,7 +26,7 @@ public abstract class Account {
         return client;
     }
 
-    public String getCreditCard() {
+    public CreditCard getCreditCard() {
         return creditCard;
     }
 

@@ -1,29 +1,17 @@
 package br.com.wipro.techbank.repositories;
 
-import br.com.wipro.techbank.models.Account;
-import br.com.wipro.techbank.models.CheckingAccount;
-import br.com.wipro.techbank.models.Account;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.com.wipro.techbank.models.Account;
+
 public class AccountRepository {
     List<Account> accounts = new ArrayList<>();
-
-    private static Long length = 0L;
 
     public Account save(Account account) {
 
         accounts.add(account);
-
-        account.setNumber(length);
-        accounts.add(account);
-        this.length += 1;
-
-        if(accounts.size() != length + 1) {
-            return null;
-        }
         return account;
     }
 

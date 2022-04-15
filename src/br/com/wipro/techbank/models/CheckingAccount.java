@@ -2,8 +2,8 @@ package br.com.wipro.techbank.models;
 
 public class CheckingAccount extends Account {
 
-    public CheckingAccount(Long number, Double balance, Client client, String creditCard) {
-        super(number, balance, client, creditCard);
+    public CheckingAccount(Double balance, Client client, CreditCard creditCard) {
+        super(balance, client, creditCard);
     }
 
     @Override
