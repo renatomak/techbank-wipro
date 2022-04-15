@@ -12,12 +12,14 @@ public class ClientRepository {
     private Long length = 0L;
 
     public Client save(Client client) {
+        this.length += 1;
         client.setId(length);
         clients.add(client);
-        this.length += 1;
-        if(clients.size() != length + 1) {
+
+        if(clients.size() != length) {
             return null;
         }
+
         return client;
     }
 
