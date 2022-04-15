@@ -16,11 +16,11 @@ public class CreditCardRepository {
         creditCard.setId(length);
         
         list.add(creditCard);
-        this.length += 1;
 
         if(list.size() != length + 1) {
             return null;
         }
+        this.length += 1;
         return creditCard;
     }
 

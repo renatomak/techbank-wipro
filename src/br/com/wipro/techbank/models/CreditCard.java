@@ -12,9 +12,9 @@ public class CreditCard implements Serializable {
     private Date expirationDate;
     private Short securityCode;
     private Double limit;
-    private Double usedLimit;
+    private Double usedLimit = 0.0;
 
-    public CreditCard(String cardNumber, Date expirationDate, Short securityCode, Double limit, Double usedLimit) {
+    public CreditCard(String cardNumber, Date expirationDate, Short securityCode, Double limit) {
         this.cardNumber = cardNumber;
         this.expirationDate = expirationDate;
         this.securityCode = securityCode;
@@ -49,13 +49,12 @@ public class CreditCard implements Serializable {
 
     @Override
     public String toString() {
-        return "CreditCard{" +
-                "id=" + id +
-                ", cardNumber='" + cardNumber + '\'' +
-                ", expirationDate=" + expirationDate +
-                ", securityCode=" + securityCode +
-                ", limit=" + limit +
-                ", usedLimit=" + usedLimit +
-                '}';
+        return "CreditCard " +
+                "id: " + id +
+                ", cardNumber: " + cardNumber +
+                ", expirationDate: " + expirationDate +
+                ", securityCode: " + securityCode +
+                ", limit: " + limit +
+                ", usedLimit: " + usedLimit;
     }
 }

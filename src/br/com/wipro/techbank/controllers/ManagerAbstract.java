@@ -1,16 +1,23 @@
 package br.com.wipro.techbank.controllers;
 
 import br.com.wipro.techbank.Utils;
+import br.com.wipro.techbank.models.CreditCard;
 
 import java.util.Scanner;
 
 public class ManagerAbstract implements ManagerInterface{
     @Override
-    public void manager(Scanner scan) {
+    public void manager(Scanner scan, String type) {
         Byte choice = 0;
 
         do {
-            System.out.println(Utils.subMenu);
+            if (type == "CREDIT_CARD") {
+                System.out.println(Utils.subMenuCreditCard);
+            } else {
+                System.out.println(Utils.subMenu);
+            }
+
+
             choice = scan.nextByte();
             Utils.clearBuffer(scan);
             switch (choice) {
