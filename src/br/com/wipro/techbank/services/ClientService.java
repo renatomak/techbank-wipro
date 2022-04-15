@@ -48,7 +48,6 @@ public class ClientService {
         } else {
             System.out.printf("Erro ao tentar remover o cliente com ID %d.\n", id);
         }
-
     }
 
     public void findAll() {
