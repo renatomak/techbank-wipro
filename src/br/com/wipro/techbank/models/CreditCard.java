@@ -49,7 +49,7 @@ public class CreditCard implements Serializable {
 
     @Override
     public String toString() {
-        return "Cartão de Credito " +
+        return "Cartão de Crédito " +
                 "código: " + id +
                 ", número do cartão: " + cardNumber +
                 ", data de expiração: " + expirationDate +

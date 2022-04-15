@@ -8,7 +8,7 @@ public abstract class Account {
     private CreditCard creditCard;
 
     public Account(Double balance, Client client, CreditCard creditCard) {
-        this.number = number++;
+        this.number++;
         this.balance = balance;
         this.client = client;
         this.creditCard = creditCard;

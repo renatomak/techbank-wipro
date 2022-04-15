@@ -53,7 +53,6 @@ public class ClientController extends ManagerAbstract {
 
     @Override
     public void save(Scanner scanner) {
-
         System.out.println("Nome: ");
         String name = scanner.nextLine();
 
@@ -74,5 +73,4 @@ public class ClientController extends ManagerAbstract {
 //        client = new Client("Ines", "144456789", "6299977799", "ines@gmail.com");
         clientService.save(client);
     }
-
 }
