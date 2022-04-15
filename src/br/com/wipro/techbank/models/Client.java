@@ -10,6 +10,7 @@ public class Client {
     private String cpf;
     private String phoneNumber;
     private String email;
+
     public Client(String name, String cpf, String phoneNumber, String email) {
         length++;
         this.id = length;
@@ -18,6 +19,7 @@ public class Client {
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
+
     public Long getId() {
         return id;
     }
@@ -44,6 +46,7 @@ public class Client {
                 "\nTelefone: " + phoneNumber +
                 "\nE-mail: " + email;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -51,6 +54,7 @@ public class Client {
         Client client = (Client) o;
         return Objects.equals(id, client.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);

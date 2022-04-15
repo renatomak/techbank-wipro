@@ -36,7 +36,7 @@ public class ManageAccounts {
                     specialAccountController.manager(scan, SPECIAL_ACCOUNT);
                 }
             } else {
-                System.out.println("Opcao invalida! Tente novamente...");
+                System.out.println("Opção inválida! Tente novamente...");
             }
 
         } while (choice != 0);

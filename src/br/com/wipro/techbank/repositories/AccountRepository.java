@@ -10,7 +10,6 @@ public class AccountRepository {
     List<Account> accounts = new ArrayList<>();
 
     public Account save(Account account) {
-
         accounts.add(account);
         return account;
     }

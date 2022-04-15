@@ -9,5 +9,4 @@ public enum OriginType {
 
     OriginType(String type) {
     }
-
 }

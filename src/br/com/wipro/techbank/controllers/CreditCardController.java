@@ -1,16 +1,14 @@
 package br.com.wipro.techbank.controllers;
 
-import br.com.wipro.techbank.Utils;
 import br.com.wipro.techbank.models.CreditCard;
 import br.com.wipro.techbank.services.CreditCardService;
 
 import java.util.Date;
 import java.util.Scanner;
 
-public class CreditCardController  extends ManagerAbstract{
+public class CreditCardController extends ManagerAbstract {
 
     private static CreditCardService creditCardService = CreditCardService.getInstance();
-
 
     @Override
     public void findAll() {
@@ -19,21 +17,20 @@ public class CreditCardController  extends ManagerAbstract{
 
     @Override
     public void delete(Scanner scanner) {
-        System.out.println("Informe o ID do creditCarde: ");
+        System.out.println("Informe o ID do cartão de crédito: ");
         Long id = scanner.nextLong();
         creditCardService.deleteById(id);
     }
 
     @Override
     public void findById(Scanner scanner) {
-        System.out.println("Informe o ID do creditCarde: ");
+        System.out.println("Informe o ID do cartão de crédito: ");
         Long id = scanner.nextLong();
         creditCardService.findById(id);
     }
 
     @Override
     public void save(Scanner scanner) {
-
         System.out.println("Limite: ");
         Double limit = scanner.nextDouble();
 
@@ -45,20 +42,17 @@ public class CreditCardController  extends ManagerAbstract{
 
         CreditCard creditCard = new CreditCard(number, date, securityCode, limit);
         creditCardService.save(creditCard);
-
     }
 
     public String generateNumbers(int limit) {
         String number = "";
-        for (int index = 0; index < limit; index++){
-            int random = (int) (Math.random()*10);
-            if(index % 4 == 0 && index > 0) {
+        for (int index = 0; index < limit; index++) {
+            int random = (int) (Math.random() * 10);
+            if (index % 4 == 0 && index > 0) {
                 number += " ";
             }
             number += random;
         }
         return number;
     }
-
-
 }
