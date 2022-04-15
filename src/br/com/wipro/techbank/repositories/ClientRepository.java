@@ -16,7 +16,7 @@ public class ClientRepository {
         client.setId(length);
         clients.add(client);
 
-        if(clients.size() != length) {
+        if (clients.size() != length) {
             return null;
         }
 
@@ -24,24 +24,24 @@ public class ClientRepository {
     }
 
     public Client findById(Long id) {
-        if (id >= clients.size()){
+        if (id >= clients.size()) {
             return null;
         }
-       return clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
+        return clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
     }
 
     public Boolean deleteById(Long id) {
         Client removeClient = findById(id);
         int index = clients.indexOf(removeClient);
 
-        if(index == -1) {
-            return  false;
+        if (index == -1) {
+            return false;
         }
 
         Client client = clients.remove(index);
 
-        if(client != null) {
-           return true;
+        if (client != null) {
+            return true;
         }
         return false;
     }
@@ -53,13 +53,13 @@ public class ClientRepository {
     public Client update(Client client) {
         int index = clients.indexOf(client);
 
-        if(index == -1) {
-            return  null;
+        if (index == -1) {
+            return null;
         }
 
         clients.remove(index);
         clients.add(client);
 
-        return  client;
+        return client;
     }
 }

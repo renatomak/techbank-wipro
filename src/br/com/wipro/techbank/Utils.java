@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Utils {
 
-    public static String menu = String.format("================================== GERENCIAMENTO DE CONTAS ======================================" +
-            "\n0 - SAIR" +
-            "\n1 - Clientes" +
-            "\n2 - Cartão de Credito" +
-            "\n3 - Contas" );
+    public static String menu = String.format(
+            "================================== GERENCIAMENTO DE CONTAS ======================================" +
+                    "\n0 - SAIR" +
+                    "\n1 - Clientes" +
+                    "\n2 - Cartão de Credito" +
+                    "\n3 - Contas");
 
     public static String subMenu = String.format("0 - Voltar ao menu anterior" +
             "\n1 - Adicionar" +

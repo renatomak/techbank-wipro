@@ -22,15 +22,15 @@ public class ManageAccounts {
             choice = scan.nextByte();
             Utils.clearBuffer(scan);
 
-            if(choice == 1 ) {
+            if (choice == 1) {
                 clientController.manager(scan, CLIENT);
             } else if (choice == 2) {
                 creditCardController.manager(scan, CREDIT_CARD);
-            } else if(choice == 3) {
+            } else if (choice == 3) {
                 System.out.println(Utils.subMenuAccounts);
                 Byte choiceAccount = scan.nextByte();
 
-                if(choiceAccount == 1){
+                if (choiceAccount == 1) {
                     checkingAccountController.manager(scan, CHECKING_ACCOUNT);
                 } else if (choiceAccount == 2) {
                     specialAccountController.manager(scan, SPECIAL_ACCOUNT);

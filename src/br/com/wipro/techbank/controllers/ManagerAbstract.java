@@ -2,12 +2,11 @@ package br.com.wipro.techbank.controllers;
 
 import br.com.wipro.techbank.Utils;
 
-
 import java.util.Scanner;
 
 import static br.com.wipro.techbank.controllers.OriginType.CREDIT_CARD;
 
-public class ManagerAbstract implements ManagerInterface{
+public class ManagerAbstract implements ManagerInterface {
     @Override
     public void manager(Scanner scan, OriginType type) {
         Byte choice = 0;
@@ -18,7 +17,6 @@ public class ManagerAbstract implements ManagerInterface{
             } else {
                 System.out.println(Utils.subMenu);
             }
-
 
             choice = scan.nextByte();
             Utils.clearBuffer(scan);

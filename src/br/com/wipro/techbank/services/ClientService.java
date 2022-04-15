@@ -12,7 +12,7 @@ public class ClientService {
     public void save(Client client) {
         Client result = repository.save(client);
 
-        if(result != null) {
+        if (result != null) {
             System.out.println("Cliente adicionado com sucesso.\n");
         } else {
             System.out.println("Cliente não foi adicionado.\n");
@@ -22,7 +22,7 @@ public class ClientService {
     public Client findById(Long id) {
         Client client = repository.findById(id);
 
-        if (client == null){
+        if (client == null) {
             System.out.printf("Cliente com ID %d não foi encontrado. \n", id);
         } else {
             System.out.println(client + "\n\n\n\n");
@@ -33,7 +33,7 @@ public class ClientService {
     public void deleteById(Long id) {
         Boolean result = repository.deleteById(id);
 
-        if(result) {
+        if (result) {
             System.out.printf("Cliente com ID %d foi removido com sucesso!\n", id);
         } else {
             System.out.printf("Erro ao tentar remover o cliente com ID %d.\n", id);
@@ -52,10 +52,10 @@ public class ClientService {
     public Client update(Client client) {
         Client result = repository.update(client);
 
-        if(result == null) {
+        if (result == null) {
             System.out.printf("Cliente com ID %d não existe.\n", client.getId());
-            return  null;
+            return null;
         }
-        return  result;
+        return result;
     }
 }

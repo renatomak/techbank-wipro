@@ -14,10 +14,10 @@ public class CreditCardRepository {
     public CreditCard save(CreditCard creditCard) {
         this.length += 1;
         creditCard.setId(length);
-        
+
         list.add(creditCard);
 
-        if(list.size() != length) {
+        if (list.size() != length) {
             return null;
         }
 
@@ -25,7 +25,7 @@ public class CreditCardRepository {
     }
 
     public CreditCard findById(Long id) {
-        if (id >= list.size()){
+        if (id >= list.size()) {
             return null;
         }
         return list.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
@@ -35,13 +35,13 @@ public class CreditCardRepository {
         CreditCard removeCreditCard = findById(id);
         int index = list.indexOf(removeCreditCard);
 
-        if(index == -1) {
-            return  false;
+        if (index == -1) {
+            return false;
         }
 
         CreditCard creditCard = list.remove(index);
 
-        if(creditCard != null) {
+        if (creditCard != null) {
             return true;
         }
         return false;
@@ -54,13 +54,13 @@ public class CreditCardRepository {
     public CreditCard update(CreditCard creditCard) {
         int index = list.indexOf(creditCard);
 
-        if(index == -1) {
-            return  null;
+        if (index == -1) {
+            return null;
         }
 
         list.remove(index);
         list.add(creditCard);
 
-        return  creditCard;
+        return creditCard;
     }
 }
