@@ -13,9 +13,9 @@ import br.com.wipro.techbank.services.SpecialAccountService;
 public class SpecialAccountController extends ManagerAbstract {
 
     private static SpecialAccountService specialAccounService = SpecialAccountService.getInstance();
-    
+
     private static ClientService clientService = ClientService.getInstance();
-    
+
     private static CreditCardService creditCardService = CreditCardService.getInstance();
 
     @Override
@@ -40,23 +40,22 @@ public class SpecialAccountController extends ManagerAbstract {
     }
 
     public void save(Scanner scanner) {
-
-        System.out.println("Informe o numero do cliente: ");
+        System.out.println("Informe o ID do cliente: ");
         Client client = clientService.findById(scanner.nextLong());
         Utils.clearBuffer(scanner);
 
-        System.out.println("Informe o valor do depo1sito inicial: ");
+        System.out.println("Informe o valor do depósito inicial: ");
         Double valueDeposit = scanner.nextDouble();
         Utils.clearBuffer(scanner);
 
-        System.out.println("Informe o numero do Cartao de Credit: ");
+        System.out.println("Informe o ID do Cartão de crédito: ");
         CreditCard creditCard = creditCardService.findById(scanner.nextLong());
 
-        System.out.println("Informe o valor do limite para conta: ");
+        System.out.println("Informe o valor do limite para a conta: ");
         Double limit = scanner.nextDouble();
         Utils.clearBuffer(scanner);
 
-        SpecialAccount specialAccount = new SpecialAccount(valueDeposit, client, creditCard,limit);
+        SpecialAccount specialAccount = new SpecialAccount(valueDeposit, client, creditCard, limit);
         specialAccounService.save(specialAccount);
     }
 }

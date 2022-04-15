@@ -38,7 +38,7 @@ public class ManagerAbstract implements ManagerInterface {
                     break;
                 default:
                     if (choice != 0) {
-                        System.out.println("Opcao invalida! Voce vai retornar ao menu anterior.");
+                        System.out.println("Opção inválida! Você vai retornar ao menu anterior.");
                     }
                     choice = 0;
             }
@@ -47,26 +47,21 @@ public class ManagerAbstract implements ManagerInterface {
 
     @Override
     public void update(Scanner scan) {
-        System.out.println("Implemente o método update");
     }
 
     @Override
     public void findById(Scanner scan) {
-        System.out.println("Implemente o método findById");
     }
 
     @Override
     public void findAll() {
-        System.out.println("Implemente o método findAll");
     }
 
     @Override
     public void delete(Scanner scan) {
-        System.out.println("Implemente o método delete");
     }
 
     @Override
     public void save(Scanner scan) {
-        System.out.println("Implemente o método save");
     }
 }

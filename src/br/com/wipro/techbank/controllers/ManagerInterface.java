@@ -15,5 +15,4 @@ public interface ManagerInterface {
     void delete(Scanner scan);
 
     void save(Scanner scan);
-
 }

@@ -49,12 +49,13 @@ public class CreditCard implements Serializable {
 
     @Override
     public String toString() {
-        return "Cartao de Credito " +
-                "\ncodigo: " + id +
-                "\nNumero do cartão: " + cardNumber +
-                "\nData de expiração: " + expirationDate +
-                "\nCodigo de segurança: " + securityCode +
-                "\nLimite: " + limit +
-                "\nLimite disponivel: " + ( limit - usedLimit);
+        return "Cartão de Crédito " +
+                "código: " + id +
+                ", número do cartão: " + cardNumber +
+                ", data de expiração: " + expirationDate +
+                ", código de segurança: " + securityCode +
+                ", limite: " + limit +
+                ", limite usado: " + usedLimit;
+
     }
 }
