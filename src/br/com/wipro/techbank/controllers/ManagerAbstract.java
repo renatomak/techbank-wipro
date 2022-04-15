@@ -4,7 +4,7 @@ import br.com.wipro.techbank.Utils;
 
 import java.util.Scanner;
 
-import static br.com.wipro.techbank.controllers.OriginType.CREDIT_CARD;
+import static br.com.wipro.techbank.controllers.OriginType.*;
 
 public class ManagerAbstract implements ManagerInterface {
     @Override
@@ -12,7 +12,7 @@ public class ManagerAbstract implements ManagerInterface {
         Byte choice = 0;
 
         do {
-            if (type == CREDIT_CARD) {
+            if (type == CREDIT_CARD || type == CHECKING_ACCOUNT || type == SPECIAL_ACCOUNT) {
                 System.out.println(Utils.subMenuCreditCard);
             } else {
                 System.out.println(Utils.subMenu);

@@ -53,25 +53,25 @@ public class ClientController extends ManagerAbstract {
 
     @Override
     public void save(Scanner scanner) {
-        System.out.println("Nome: ");
-        String name = scanner.nextLine();
+//        System.out.println("Nome: ");
+//        String name = scanner.nextLine();
+//
+//        System.out.println("CPF: ");
+//        String cpf = scanner.nextLine();
+//
+//        System.out.println("Telefone: ");
+//        String phone = scanner.nextLine();
+//
+//        System.out.println("Email: ");
+//        String email = scanner.nextLine();
 
-        System.out.println("CPF: ");
-        String cpf = scanner.nextLine();
-
-        System.out.println("Telefone: ");
-        String phone = scanner.nextLine();
-
-        System.out.println("Email: ");
-        String email = scanner.nextLine();
-
-        Client client = new Client(name, cpf, phone, email);
-        // Client client = new Client("Renato Maques", "123456789", "6299999999",
-        // "renato@gmail.com");
-        // clientService.save(client);
-        // client = new Client("Monica", "123456123", "629999888", "monica@gmail.com");
-        // clientService.save(client);
-        // client = new Client("Ines", "144456789", "6299977799", "ines@gmail.com");
+//        Client client = new Client(name, cpf, phone, email);
+         Client client = new Client("Renato Maques", "123456789", "6299999999",
+         "renato@gmail.com");
+         clientService.save(client);
+         client = new Client("Monica", "123456123", "629999888", "monica@gmail.com");
+         clientService.save(client);
+         client = new Client("Ines", "144456789", "6299977799", "ines@gmail.com");
 
         clientService.save(client);
     }
