@@ -57,6 +57,5 @@ public class CreditCard implements Serializable {
                 "\nlimite: " + limit +
                 "\nLimite disponível: " + (limit - usedLimit) +
                 "\n===============================================================================";
-
     }
 }

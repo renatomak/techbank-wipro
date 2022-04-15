@@ -48,7 +48,6 @@ public class SpecialAccountService {
         } else {
             System.out.printf("Erro ao tentar remover a conta com ID %d.\n", id);
         }
-
 	}
 
 	public void findAll() {
@@ -56,5 +55,4 @@ public class SpecialAccountService {
 		accountList.forEach(item -> System.out.println(item));
 		System.out.println("\n");
 	}
-
 }

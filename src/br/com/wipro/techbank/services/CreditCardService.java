@@ -48,7 +48,6 @@ public class CreditCardService {
         } else {
             System.out.printf("Erro ao tentar remover o Cartão de crédito com ID %d.\n", id);
         }
-
     }
 
     public void findAll() {
