@@ -34,6 +34,7 @@ public class CheckingAccountController extends ManagerAbstract {
         System.out.println("Informe o valor do depósito inicial: ");
         Double valueDeposit = scanner.nextDouble();
 
-        CheckingAccount checkingAccount = new CheckingAccount(null, valueDeposit, client, creditCard);
+        CheckingAccount checkingAccount = new CheckingAccount(valueDeposit, client, creditCard);
+        checkingAccountService.save(checkingAccount);
     }
 }
