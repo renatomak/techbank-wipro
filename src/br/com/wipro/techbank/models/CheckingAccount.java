@@ -8,9 +8,13 @@ public class CheckingAccount extends Account {
 
     @Override
     public void withDraw(Double value) {
-        if (this.getBalance() <= 0d)
+        if (value <= this.getBalance()) {
+            this.balance -= value;
+            System.out.printf("Saldo Atual: R$ %.2f %n", this.getBalance());
+            System.out.printf("Saque: R$ %.2f %n %n", value);
+        } else {
             System.out.println("Saldo insuficiente!");
-        else this.withDraw(value);
+        }
     }
 
     @Override
