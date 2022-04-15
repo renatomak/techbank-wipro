@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class CreditCardController  extends ManagerAbstract{
 
-    private static CreditCardService creditCardService = new CreditCardService();
+    private static CreditCardService creditCardService = CreditCardService.getInstance();
 
 
     @Override

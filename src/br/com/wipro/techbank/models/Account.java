@@ -2,7 +2,7 @@ package br.com.wipro.techbank.models;
 
 public abstract class Account {
 
-    private static Long number;
+    private static Long number = 0L;
     protected Double balance;
     private Client client;
     private CreditCard creditCard;

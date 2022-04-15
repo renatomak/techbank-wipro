@@ -6,9 +6,20 @@ import br.com.wipro.techbank.repositories.CreditCardRepository;
 import java.util.List;
 
 public class CreditCardService {
+	
+	private static CreditCardService instance = new CreditCardService();
+	
     private CreditCardRepository repository = new CreditCardRepository();
 
-    public void save(CreditCard creditCard) {
+    private CreditCardService() {
+		super();
+	}
+
+	public static CreditCardService getInstance() {
+		return instance;
+	}
+
+	public void save(CreditCard creditCard) {
         CreditCard result = repository.save(creditCard);
 
         if(result != null) {

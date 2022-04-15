@@ -8,7 +8,7 @@ import br.com.wipro.techbank.services.CheckingAccountService;
 import java.util.Scanner;
 
 public class CheckingAccountController extends ManagerAbstract {
-    private static CheckingAccountService checkingAccountService = new CheckingAccountService();
+    private static CheckingAccountService checkingAccountService = CheckingAccountService.getInstance();
 
     @Override
     public void findById(Scanner scanner) {

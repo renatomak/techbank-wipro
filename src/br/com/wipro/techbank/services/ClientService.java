@@ -7,15 +7,25 @@ import java.util.List;
 
 public class ClientService {
 
+	private static ClientService instance = new ClientService();
+	
     private ClientRepository repository = new ClientRepository();
 
-    public void save(Client client) {
+    private ClientService() {
+		super();
+	}
+    
+	public static ClientService getInstance() {
+		return instance;
+	}
+
+	public void save(Client client) {
         Client result = repository.save(client);
 
         if (result != null) {
             System.out.println("Cliente adicionado com sucesso.\n");
         } else {
-            System.out.println("Cliente não foi adicionado.\n");
+            System.out.println("Cliente nao foi adicionado.\n");
         }
     }
 
@@ -23,10 +33,12 @@ public class ClientService {
         Client client = repository.findById(id);
 
         if (client == null) {
-            System.out.printf("Cliente com ID %d não foi encontrado. \n", id);
+            System.out.printf("Cliente com ID %d nao foi encontrado. \n", id);
         } else {
             System.out.println(client + "\n\n\n\n");
         }
+        
+        System.err.println("ID CLiente: " + client.getId());
         return client;
     }
 
@@ -53,7 +65,7 @@ public class ClientService {
         Client result = repository.update(client);
 
         if (result == null) {
-            System.out.printf("Cliente com ID %d não existe.\n", client.getId());
+            System.out.printf("Cliente com ID %d nao existe.\n", client.getId());
             return null;
         }
         return result;

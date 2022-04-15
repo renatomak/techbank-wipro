@@ -25,7 +25,7 @@ public class CreditCardRepository {
     }
 
     public CreditCard findById(Long id) {
-        if (id >= list.size()) {
+        if (id > list.size()) {
             return null;
         }
         return list.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);
