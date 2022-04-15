@@ -25,7 +25,7 @@ public class ClientService {
         if (client == null) {
             System.out.printf("Cliente com ID %d não foi encontrado. \n", id);
         } else {
-            System.out.println(client + "\n\n\n\n");
+            System.out.println(client + "\n");
         }
         return client;
     }
@@ -44,7 +44,8 @@ public class ClientService {
     public void findAll() {
         List<Client> clientList = repository.findAll();
 
-        clientList.forEach(item -> System.out.println(item));
+        clientList.forEach(item -> System.out.println("Cliente: " + item.getName() + ", Codigo: " + item.getId() +
+        ", CPF: " + item.getCpf() + ", Telefone: " + item.getPhoneNumber() + ", E-mail: " + item.getEmail()));
 
         System.out.println("\n");
     }

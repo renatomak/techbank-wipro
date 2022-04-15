@@ -51,4 +51,11 @@ public class SpecialAccount extends Account {
             account.deposit(value);
         }
     }
+
+    @Override
+    public String toString() {
+        return "Conta Especial \n" + super.toString() +
+                "\nLimite Cheque especial: " + limit +
+                "\nLimite disponivel: " + (limit - usedLimit);
+    }
 }

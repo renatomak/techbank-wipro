@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class CreditCard implements Serializable {
-    private static final long serialVersionUID = -102347617765968938L;
+    private static final long serialVersionUID = 1L;
 
     private Long id;
     private String cardNumber;
@@ -49,12 +49,12 @@ public class CreditCard implements Serializable {
 
     @Override
     public String toString() {
-        return "Cartão de Credito " +
-                "código: " + id +
-                ", número do cartão: " + cardNumber +
-                ", data de expiração: " + expirationDate +
-                ", código de segurança: " + securityCode +
-                ", limite: " + limit +
-                ", limite usado: " + usedLimit;
+        return "Cartao de Credito " +
+                "\ncodigo: " + id +
+                "\nNumero do cartão: " + cardNumber +
+                "\nData de expiração: " + expirationDate +
+                "\nCodigo de segurança: " + securityCode +
+                "\nLimite: " + limit +
+                "\nLimite disponivel: " + ( limit - usedLimit);
     }
 }

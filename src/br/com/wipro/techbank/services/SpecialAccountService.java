@@ -15,7 +15,7 @@ public class SpecialAccountService {
 	        if(result != null) {
 	            System.out.println("Conta Especial adicionada com sucesso.\n");
 	        } else {
-	            System.out.println("Conta Especial n„o foi adicionado.\n");
+	            System.out.println("Conta Especial n√£o foi adicionado.\n");
 	        }
 	    }
 

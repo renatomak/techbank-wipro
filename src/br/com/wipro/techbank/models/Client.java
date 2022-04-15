@@ -51,11 +51,11 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client " + name +
-                ", código: " + numero +
-                ", cpf: " + cpf +
-                ", phoneNumber: " + phoneNumber +
-                ", email: " + email;
+        return "Cliente:  " + name +
+                "\nCodigo: " + numero +
+                "\nCPF: " + cpf +
+                "\nTelefone: " + phoneNumber +
+                "\nE-mail: " + email;
     }
 
     @Override
