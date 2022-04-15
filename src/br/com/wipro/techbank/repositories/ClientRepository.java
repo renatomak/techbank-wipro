@@ -24,7 +24,7 @@ public class ClientRepository {
     }
 
     public Client findById(Long id) {
-        if (id >= clients.size()) {
+        if (id > clients.size()) {
             return null;
         }
         return clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);

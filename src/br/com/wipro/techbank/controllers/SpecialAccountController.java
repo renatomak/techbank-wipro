@@ -11,12 +11,11 @@ import br.com.wipro.techbank.services.SpecialAccountService;
 
 public class SpecialAccountController extends ManagerAbstract {
 
-    private static SpecialAccountService specialAccounService = new SpecialAccountService();
-//    private static ClientService clientService = new ClientService();
+    private static SpecialAccountService specialAccounService = SpecialAccountService.getInstance();
     
     private static ClientService clientService = ClientService.getInstance();
     
-    private static CreditCardService creditCardService = new CreditCardService();
+    private static CreditCardService creditCardService = CreditCardService.getInstance();
 
     @Override
     public void findById(Scanner scanner) {

@@ -11,7 +11,6 @@ public class ClientService {
 	
     private ClientRepository repository = new ClientRepository();
 
-    
     private ClientService() {
 		super();
 	}

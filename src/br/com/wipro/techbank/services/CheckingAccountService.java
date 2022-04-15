@@ -8,8 +8,18 @@ import java.util.stream.Collectors;
 
 public class CheckingAccountService {
 
+	private static CheckingAccountService  instance= new CheckingAccountService();
+	
     protected List<CheckingAccount> checkingAccounts = new ArrayList<>();
-
+    
+    private CheckingAccountService() {
+    	super();
+	}
+    
+    public static CheckingAccountService getInstance() {
+		return instance;
+	}
+    
     public void save(CheckingAccount checkingAccount) {
         Long number = checkingAccount.getNumber();
         CheckingAccount existAccount = findById(number);
