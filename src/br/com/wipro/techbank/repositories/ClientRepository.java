@@ -9,22 +9,22 @@ import java.util.stream.Collectors;
 public class ClientRepository {
     private List<Client> clients = new ArrayList<>();
 
-    private Long length = 0L;
+//    private Long length = 0L;
 
     public Client save(Client client) {
-        this.length += 1;
-        client.setId(length);
+//        this.length += 1;
+//        client.setId(length);
         clients.add(client);
 
-        if (clients.size() != length) {
-            return null;
-        }
+//        if (clients.size() != length) {
+//            return null;
+//        }
 
         return client;
     }
 
     public Client findById(Long id) {
-        if (id >= clients.size()) {
+        if (id > clients.size()) {
             return null;
         }
         return clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList()).get(0);

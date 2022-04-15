@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public abstract class Account implements Serializable {
 
-    private static Long number;
+    private static Long number = 0L;
     protected Double balance;
     private Client client;
     private CreditCard creditCard;

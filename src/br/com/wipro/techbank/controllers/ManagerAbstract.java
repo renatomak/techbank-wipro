@@ -38,7 +38,7 @@ public class ManagerAbstract implements ManagerInterface {
                     break;
                 default:
                     if (choice != 0) {
-                        System.out.println("Opção inválida! Você vai retornar ao menu anterior.");
+                        System.out.println("Opcao invalida! Voce vai retornar ao menu anterior.");
                     }
                     choice = 0;
             }

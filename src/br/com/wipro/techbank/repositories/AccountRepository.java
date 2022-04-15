@@ -16,7 +16,7 @@ public class AccountRepository {
     }
 
     public Account findById(Long id) {
-        if (id >= accounts.size()) {
+        if (id > accounts.size()) {
             return null;
         }
         return accounts.stream().filter(item -> item.getNumber() == id).collect(Collectors.toList()).get(0);
