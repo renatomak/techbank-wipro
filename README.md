@@ -1,36 +1,37 @@
 # Projeto techBANK
 
-Nosso grupo é composto por:
-* Antônio Carlos Andrade (Junior)
+Nosso grupo Ã© composto por:
+* AntÃ´nio Carlos Andrade (Junior)
 * Ederson Rafael Nonnemacher
 * Renato Marques da Silva
 
-O projeto Java proposto pela Wipro e Gama Academy consiste em criar um sistema bancário,
+O projeto Java proposto pela Wipro e Gama Academy consiste em criar um sistema bancÃ¡rio,
 que nomeamos de techBANK, onde este conforme escopo deve possuir uma classe gerencia conta, a classe conta,
-sendo essa abstrata, portanto não podendo ser instanciada, classes conta corrente e conta especial,
-que herdam as funções e atributos da classe conta, sendo que a classe conta especial possui a mais a
-propriedade de limite, onde o cliente pode efetuar um saque e/ou transferência se
-utilizando deste limite, o que não ocorre na classe conta corrente, onde o cliente somente
-pode efetuar saques e/ou transferências com o valor que consta em saldo na conta, optamos também
-por criar uma classe cliente, pois em conversa definimos que cada conta bancária necessita de um cliente.
-Além disso, deve possuir um cartão de crédito associado a alguma das contas.
-A classe gerencia conta, é a nossa classe main, responsável por gerenciar as operações do menu, direcionando
-as funções para determinadas classes conforme escolha do usuário.
+sendo essa abstrata, portanto nÃ£o podendo ser instanciada, classes conta corrente e conta especial,
+que herdam as funÃ§Ãµes e atributos da classe conta, sendo que a classe conta especial possui a mais a
+propriedade de limite, onde o cliente pode efetuar um saque e/ou transferÃªncia se
+utilizando deste limite, o que nÃ£o ocorre na classe conta corrente, onde o cliente somente
+pode efetuar saques e/ou transferÃªncias com o valor que consta em saldo na conta, optamos tambÃ©m
+por criar uma classe cliente, pois em conversa definimos que cada conta bancÃ¡ria necessita de um cliente.
+AlÃ©m disso, deve possuir um cartÃ£o de crÃ©dito associado a alguma das contas.
+A classe gerencia conta, Ã© a nossa classe main, responsÃ¡vel por gerenciar as operaÃ§Ãµes do menu, direcionando
+as funÃ§Ãµes para determinadas classes conforme escolha do usuÃ¡rio.
 
-Abaixo uma descrição das funções de cada classe:
+Abaixo uma descriÃ§Ã£o das funÃ§Ãµes de cada classe:
 
-* Funções cliente: Adicionar/excluir/mostrar todos/mostrar por ID/atualizar dados
-* Funções cartão de crédito: Adicionar/excluir/mostrar todos/mostrar por ID
-* Funções conta corrente: Adicionar/excluir/mostrar todos/mostrar por ID/efetuar depósito/efetuar saque
-* Funções conta especial: Adicionar e definir limite/excluir/mostrar todos/mostrar por ID/efetuar depósito/efetuar saque
+* FunÃ§Ãµes cliente: Adicionar/excluir/mostrar todos/mostrar por ID/atualizar dados
+* FunÃ§Ãµes cartÃ£o de crÃ©dito: Adicionar/excluir/mostrar todos/mostrar por ID
+* FunÃ§Ãµes conta corrente: Adicionar/excluir/mostrar todos/mostrar por ID/efetuar depÃ³sito/efetuar saque
+* FunÃ§Ãµes conta especial: Adicionar e definir limite/excluir/mostrar todos/mostrar por ID/efetuar depÃ³sito/efetuar saque
 
-Inserimos também a função de extrato de operações, onde a cada operação realizada como saque, depósito, transferência,
-é registrada no extrato, podendo o usuário consultar este extrato a qualquer momento, verificando na impressão
-a data da operação, o tipo da operação, e o valor da mesma.
+Inserimos tambÃ©m a funÃ§Ã£o de extrato de operaÃ§Ãµes, onde a cada operaÃ§Ã£o realizada como saque, depÃ³sito, transferÃªncia,
+Ã© registrada no extrato, podendo o usuÃ¡rio consultar este extrato a qualquer momento, verificando na impressÃ£o
+a data da operaÃ§Ã£o, o tipo da operaÃ§Ã£o, e o valor da mesma.
 
 
 #### Abaixo diagrama UML e use case do projeto.
 
-![DIAGRAMA UML](../../../../../Desktop/Wipro Bootcamp/Projeto/Classe UML.jpeg)
+![DIAGRAMA UML]![Classe UML](https://user-images.githubusercontent.com/45982271/163680038-7f2f3341-aa20-4a06-83bf-0d55a5022aac.jpeg)
 
-![USE CASE](../../../../../Desktop/Wipro Bootcamp/Projeto/Diagrama de caso de uso.jpeg)
+
+![USE CASE]![Diagrama de caso de uso](https://user-images.githubusercontent.com/45982271/163680043-3520557c-3859-469e-99e2-c4567249056e.jpeg)
