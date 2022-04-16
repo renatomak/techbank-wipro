@@ -60,4 +60,8 @@ public class CheckingAccountService {
 
         System.out.println("\n");
     }
+
+    public void withdraw(Long id, Double value){
+        repository.withdraw(id, value);
+    }
 }

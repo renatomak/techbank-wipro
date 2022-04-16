@@ -53,4 +53,14 @@ public class AccountRepository {
 
         return account;
     }
+
+    public void withdraw(Long id, Double value) {
+        Account account = findById(id);
+        if (account != null) {
+            account.withDraw(value);
+            System.out.printf("Compra no de %.2f realizada!", value);
+        } else {
+            System.out.println("A conta informada não exite!");
+        }
+    }
 }

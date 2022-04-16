@@ -55,4 +55,8 @@ public class SpecialAccountService {
 		accountList.forEach(item -> System.out.println(item));
 		System.out.println("\n");
 	}
+
+	public void withdraw(Long id, Double value){
+		repository.withdraw(id, value);
+	}
 }

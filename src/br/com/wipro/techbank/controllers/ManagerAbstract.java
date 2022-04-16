@@ -36,6 +36,9 @@ public class ManagerAbstract implements ManagerInterface {
                 case 5:
                     update(scan);
                     break;
+                case 6:
+                    withdraw(scan);
+                    break;
                 default:
                     if (choice != 0) {
                         System.out.println("Opção inválida! Você vai retornar ao menu anterior.");
@@ -63,5 +66,9 @@ public class ManagerAbstract implements ManagerInterface {
 
     @Override
     public void save(Scanner scan) {
+    }
+
+    public void withdraw(Scanner scan){
+
     }
 }

@@ -1,5 +1,6 @@
 package br.com.wipro.techbank.controllers;
 
+import br.com.wipro.techbank.Utils;
 import br.com.wipro.techbank.models.CheckingAccount;
 import br.com.wipro.techbank.models.Client;
 import br.com.wipro.techbank.models.CreditCard;
@@ -48,5 +49,17 @@ public class CheckingAccountController extends ManagerAbstract {
 
         CheckingAccount checkingAccount = new CheckingAccount(valueDeposit, client, creditCard);
         checkingAccountService.save(checkingAccount);
+    }
+
+    public void withdraw(Scanner scanner){
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        System.out.println("Valor da compra: ");
+        Double value = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
+
+        checkingAccountService.withdraw(id, value);
     }
 }
