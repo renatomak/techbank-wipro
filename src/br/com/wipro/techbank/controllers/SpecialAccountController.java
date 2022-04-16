@@ -44,11 +44,11 @@ public class SpecialAccountController extends ManagerAbstract {
         Client client = clientService.findById(scanner.nextLong());
         Utils.clearBuffer(scanner);
 
-        System.out.println("Informe o valor do depÛsito inicial: ");
+        System.out.println("Informe o valor do dep√≥sito inicial: ");
         Double valueDeposit = scanner.nextDouble();
         Utils.clearBuffer(scanner);
 
-        System.out.println("Informe o ID do Cart„o de crÈdito: ");
+        System.out.println("Informe o ID do Cart√£o de cr√©dito: ");
         CreditCard creditCard = creditCardService.findById(scanner.nextLong());
 
         System.out.println("Informe o valor do limite para a conta: ");
@@ -63,10 +63,31 @@ public class SpecialAccountController extends ManagerAbstract {
         Long id = scanner.nextLong();
         Utils.clearBuffer(scanner);
 
-        System.out.println("Valor da compra: ");
+        System.out.println("Valor da saque: ");
         Double value = scanner.nextDouble();
         Utils.clearBuffer(scanner);
 
         specialAccounService.withdraw(id, value);
+    }
+
+    public void printStatement(Scanner scanner) {
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        specialAccounService.printStatement(id);
+
+    }
+
+    public void deposit(Scanner scanner) {
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        System.out.println("Valor do dep√≥sito: ");
+        Double value = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
+
+        specialAccounService.deposit(id, value);
     }
 }

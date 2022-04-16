@@ -18,7 +18,12 @@ public class AccountRepository {
         if (id > accounts.size()) {
             return null;
         }
-        return accounts.stream().filter(item -> item.getNumber() == id).collect(Collectors.toList()).get(0);
+        try {
+            return accounts.stream().filter(item -> item.getNumber() == id).collect(Collectors.toList()).get(0);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Tente novamente");
+        }
+        return accounts.get((int) (id-1));
     }
 
     public Boolean deleteById(Long id) {
@@ -58,9 +63,28 @@ public class AccountRepository {
         Account account = findById(id);
         if (account != null) {
             account.withDraw(value);
-            System.out.printf("Compra no de %.2f realizada!", value);
+            System.out.printf("Compra no de %.2f realizada!\n", value);
         } else {
-            System.out.println("A conta informada n�o exite!");
+            System.out.println("A conta informada não exite!");
+        }
+    }
+
+    public void printStatement(Long id){
+        Account account = findById(id);
+        if (account != null) {
+            account.printStatement();
+        } else {
+            System.out.println("A conta informada não exite!");
+        }
+    }
+
+    public void deposit(Long id, Double value) {
+        Account account = findById(id);
+        if (account != null) {
+            account.deposit(value);
+            System.out.printf("Deposito no valor de %.2f realizado!\n", value);
+        } else {
+            System.out.println("A conta informada não exite!");
         }
     }
 }

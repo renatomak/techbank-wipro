@@ -12,9 +12,12 @@ public class ManagerAbstract implements ManagerInterface {
         Byte choice = 0;
 
         do {
-            if (type == CREDIT_CARD || type == CHECKING_ACCOUNT || type == SPECIAL_ACCOUNT) {
+            if (type == CREDIT_CARD) {
                 System.out.println(Utils.subMenuCreditCard);
-            } else {
+            } else if (type == CHECKING_ACCOUNT || type == SPECIAL_ACCOUNT) {
+                System.out.println(Utils.subMenuAccounts);
+            }
+            else {
                 System.out.println(Utils.subMenu);
             }
 
@@ -38,6 +41,12 @@ public class ManagerAbstract implements ManagerInterface {
                     break;
                 case 6:
                     withdraw(scan);
+                    break;
+                case 7:
+                    deposit(scan);
+                    break;
+                case 8:
+                    printStatement(scan);
                     break;
                 default:
                     if (choice != 0) {
@@ -69,6 +78,14 @@ public class ManagerAbstract implements ManagerInterface {
     }
 
     public void withdraw(Scanner scan){
+
+    }
+
+    public void printStatement(Scanner scanner) {
+
+    }
+
+    public void deposit(Scanner scanner){
 
     }
 }

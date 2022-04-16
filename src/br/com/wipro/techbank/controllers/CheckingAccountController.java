@@ -62,4 +62,25 @@ public class CheckingAccountController extends ManagerAbstract {
 
         checkingAccountService.withdraw(id, value);
     }
+
+    public void printStatement(Scanner scanner) {
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        checkingAccountService.printStatement(id);
+
+    }
+
+    public void deposit(Scanner scanner) {
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        System.out.println("Valor do depósito: ");
+        Double value = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
+
+        checkingAccountService.deposit(id, value);
+    }
 }

@@ -59,4 +59,12 @@ public class SpecialAccountService {
 	public void withdraw(Long id, Double value){
 		repository.withdraw(id, value);
 	}
+
+	public void printStatement(Long id) {
+		repository.printStatement(id);
+	}
+
+	public void deposit(Long id, Double value) {
+		repository.deposit(id, value);
+	}
 }

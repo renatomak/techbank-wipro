@@ -22,12 +22,18 @@ public class Utils {
             "\n1 - Adicionar" +
             "\n2 - Excluir" +
             "\n3 - Mostrar todos" +
+            "\n4 - Mostrar por ID");
+
+    public static String subMenuAccounts = String.format("0 - Voltar ao menu anterior" +
+            "\n1 - Adicionar" +
+            "\n2 - Excluir" +
+            "\n3 - Mostrar todos" +
             "\n4 - Mostrar por ID" +
             "\n6 - Sacar" +
             "\n7 - Depositar" +
             "\n8 - Exibir extrato");
 
-    public static String subMenuAccounts = String.format("0 - Voltar ao menu anterior" +
+    public static String menuAccounts = String.format("0 - Voltar ao menu anterior" +
             "\n1 - Conta Corrente" +
             "\n2 - Conta Especial");
 

@@ -17,14 +17,14 @@ public class CreditCardController extends ManagerAbstract {
 
     @Override
     public void delete(Scanner scanner) {
-        System.out.println("Informe o ID do cartão de crédito: ");
+        System.out.println("Informe o ID do cartï¿½o de crï¿½dito: ");
         Long id = scanner.nextLong();
         creditCardService.deleteById(id);
     }
 
     @Override
     public void findById(Scanner scanner) {
-        System.out.println("Informe o ID do cartão de crédito: ");
+        System.out.println("Informe o ID do cartï¿½o de crï¿½dito: ");
         Long id = scanner.nextLong();
         creditCardService.findById(id);
     }
