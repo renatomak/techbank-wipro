@@ -58,4 +58,36 @@ public class SpecialAccountController extends ManagerAbstract {
         SpecialAccount specialAccount = new SpecialAccount(valueDeposit, client, creditCard, limit);
         specialAccounService.save(specialAccount);
     }
+    public void withdraw(Scanner scanner){
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        System.out.println("Valor da saque: ");
+        Double value = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
+
+        specialAccounService.withdraw(id, value);
+    }
+
+    public void printStatement(Scanner scanner) {
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        specialAccounService.printStatement(id);
+
+    }
+
+    public void deposit(Scanner scanner) {
+        System.out.println("Informe o ID da conta: ");
+        Long id = scanner.nextLong();
+        Utils.clearBuffer(scanner);
+
+        System.out.println("Valor do depósito: ");
+        Double value = scanner.nextDouble();
+        Utils.clearBuffer(scanner);
+
+        specialAccounService.deposit(id, value);
+    }
 }

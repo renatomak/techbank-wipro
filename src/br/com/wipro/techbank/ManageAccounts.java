@@ -27,7 +27,7 @@ public class ManageAccounts {
             } else if (choice == 2) {
                 creditCardController.manager(scan, CREDIT_CARD);
             } else if (choice == 3) {
-                System.out.println(Utils.subMenuAccounts);
+                System.out.println(Utils.menuAccounts);
                 Byte choiceAccount = scan.nextByte();
 
                 if (choiceAccount == 1) {
@@ -36,7 +36,7 @@ public class ManageAccounts {
                     specialAccountController.manager(scan, SPECIAL_ACCOUNT);
                 }
             } else {
-                System.out.println("OpÁ„o inv·lida! Tente novamente...");
+                System.out.println("Op√ß√£o inv√°lida! Tente novamente...");
             }
 
         } while (choice != 0);

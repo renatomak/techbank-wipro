@@ -50,13 +50,14 @@ public class Client implements Serializable {
 
     @Override
     public String toString() {
-        return "==============================      Cliente      ================================" +
+        return "==============================      Cliente     ================================" +
                 "\nNome: " + name +
                 "\nCódigo: " + id +
                 "\nCPF: " + cpf +
                 "\nTelefone: " + phoneNumber +
                 "\nE-mail: " + email +
-                "\n==============================================================================";
+                "\n================================================================================";
+
     }
 
     @Override

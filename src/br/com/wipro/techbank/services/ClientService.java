@@ -62,7 +62,6 @@ public class ClientService {
     public Client update(Client client) {
 
         Client result = repository.update(client);
-        System.out.println(result);
 
         if (result == null) {
             System.out.printf("Cliente com ID %d não existe.\n", client.getId());
