@@ -28,6 +28,12 @@ public class SpecialAccount extends Account {
             this.balance -= value;
             System.out.printf("Saldo Atual: R$ %.2f %n", this.getBalance());
             System.out.printf("Saque: R$ %.2f %n %n", value);
+
+            Operation opr = new Operation();
+            opr.setDescription("Saque");
+            opr.setValue(value);
+            this.statement.add(opr);
+
         } else if (value <= (this.getBalance() + this.getLimit())) {
 
             this.usedLimit = this.getBalance() - value;
@@ -39,6 +45,11 @@ public class SpecialAccount extends Account {
             System.out.printf("Saldo Atual: R$ %.2f %n", this.getBalance());
             System.out.printf("Limite Utilizado: R$ %.2f %n %n", usedLimitToPrint);
 
+            Operation opr = new Operation();
+            opr.setDescription("    Saque    ");
+            opr.setValue(value);
+            this.statement.add(opr);
+
         } else {
             System.out.println("Saldo insuficiente!");
         }
@@ -49,6 +60,11 @@ public class SpecialAccount extends Account {
         if (value <= (this.getBalance() + this.getLimit())) {
             this.withDraw(value);
             account.deposit(value);
+
+            Operation opr = new Operation();
+            opr.setDescription("Transferencia");
+            opr.setValue(value);
+            this.statement.add(opr);
         }
     }
 

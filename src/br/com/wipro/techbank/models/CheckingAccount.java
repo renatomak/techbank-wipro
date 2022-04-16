@@ -12,6 +12,12 @@ public class CheckingAccount extends Account {
             this.balance -= value;
             System.out.printf("Saldo Atual: R$ %.2f %n", this.getBalance());
             System.out.printf("Saque: R$ %.2f %n %n", value);
+
+            Operation opr = new Operation();
+            opr.setDescription("    Saque    ");
+            opr.setValue(value);
+            this.statement.add(opr);
+
         } else {
             System.out.println("Saldo insuficiente!");
         }
@@ -24,6 +30,11 @@ public class CheckingAccount extends Account {
         else {
             this.withDraw(value);
             account.deposit(value);
+
+            Operation opr = new Operation();
+            opr.setDescription("Transferencia");
+            opr.setValue(value);
+            this.statement.add(opr);
         }
     }
 

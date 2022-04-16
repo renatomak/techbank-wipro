@@ -51,9 +51,7 @@ public class ClientRepository {
     }
 
     public Client update(Client client) {
-        System.out.println("CLIENTE: " + client);
         int index = clients.indexOf(client);
-        System.out.println("INDEX: " + index);
         if (index == -1) {
             return null;
         }
