@@ -31,7 +31,7 @@ a data da operação, o tipo da operação, e o valor da mesma.
 
 #### Abaixo diagrama UML e use case do projeto.
 
-![DIAGRAMA UML]![Classe UML](https://user-images.githubusercontent.com/45982271/163680038-7f2f3341-aa20-4a06-83bf-0d55a5022aac.jpeg)
+![Classe UML](https://user-images.githubusercontent.com/45982271/163680038-7f2f3341-aa20-4a06-83bf-0d55a5022aac.jpeg)
 
 
-![USE CASE]![Diagrama de caso de uso](https://user-images.githubusercontent.com/45982271/163680043-3520557c-3859-469e-99e2-c4567249056e.jpeg)
+![Diagrama de caso de uso](https://user-images.githubusercontent.com/45982271/163680043-3520557c-3859-469e-99e2-c4567249056e.jpeg)
